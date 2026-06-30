@@ -1,0 +1,141 @@
+﻿user_id,action_name,period_type,period_value,next_expected_time,positive_label,pattern_id,pattern_strength,jitter_days,missing_occurrence_count
+user_041,查账单,daily,every 1 day,2026-04-01 08:00:00,1,periodic_000,strong,0,0
+user_210,工资转账,daily,every 1 day,2026-04-01 09:00:00,1,periodic_001,strong,0,0
+user_181,还信用卡,daily,every 1 day,2026-04-01 10:00:00,1,periodic_002,strong,0,0
+user_198,还信用卡,daily,every 1 day,2026-04-01 11:00:00,1,periodic_003,strong,0,0
+user_234,购买理财,daily,every 1 day,2026-04-01 08:00:00,1,periodic_004,strong,0,0
+user_065,查账单,daily,every 1 day,2026-04-01 09:00:00,1,periodic_005,strong,0,0
+user_215,基金定投,daily,every 1 day,2026-04-01 10:00:00,1,periodic_006,strong,0,0
+user_004,查账单,daily,every 1 day,2026-04-01 11:00:00,1,periodic_007,strong,0,0
+user_197,信用卡账单,daily,every 1 day,2026-04-01 08:00:00,1,periodic_008,strong,0,0
+user_224,购买理财,daily,every 1 day,2026-04-01 09:00:00,1,periodic_009,strong,0,0
+user_154,给朋友转账,daily,every 1 day,2026-04-01 10:00:00,1,periodic_010,strong,0,0
+user_166,查账单,daily,every 1 day,2026-04-01 11:00:00,1,periodic_011,strong,0,0
+user_060,查余额,daily,every 1 day,2026-04-01 08:00:00,1,periodic_012,strong,0,0
+user_058,查账单,daily,every 1 day,2026-04-01 09:00:00,1,periodic_013,strong,0,0
+user_178,信用卡账单,daily,every 1 day,2026-04-01 10:00:00,1,periodic_014,strong,0,0
+user_100,查余额,daily,every 1 day,2026-04-01 11:00:00,1,periodic_015,strong,0,0
+user_033,信用卡账单,daily,every 1 day,2026-04-01 08:00:00,1,periodic_016,strong,0,0
+user_006,给朋友转账,daily,every 1 day,2026-04-01 09:00:00,1,periodic_017,strong,0,0
+user_037,基金定投,daily,every 1 day,2026-04-01 10:00:00,1,periodic_018,strong,0,0
+user_171,工资转账,daily,every 1 day,2026-04-01 11:00:00,1,periodic_019,strong,0,0
+user_142,查账单,daily,every 1 day,2026-04-01 08:00:00,1,periodic_020,strong,0,0
+user_078,工资转账,daily,every 1 day,2026-04-01 09:00:00,1,periodic_021,strong,0,0
+user_002,给朋友转账,daily,every 1 day,2026-04-01 10:00:00,1,periodic_022,strong,0,0
+user_107,购买理财,daily,every 1 day,2026-04-01 11:00:00,1,periodic_023,strong,0,0
+user_003,信用卡账单,weekly,weekday=3,2026-04-02 08:00:00,1,periodic_024,strong,0,0
+user_130,给朋友转账,weekly,weekday=4,2026-04-03 09:00:00,1,periodic_025,strong,0,0
+user_214,查余额,weekly,weekday=5,2026-04-04 10:00:00,1,periodic_026,strong,0,0
+user_119,给朋友转账,weekly,weekday=6,2026-04-05 11:00:00,1,periodic_027,strong,0,0
+user_233,查余额,weekly,weekday=0,2026-04-06 08:00:00,1,periodic_028,strong,0,0
+user_139,查余额,weekly,weekday=1,2026-04-07 09:00:00,1,periodic_029,strong,0,0
+user_156,购买理财,weekly,weekday=2,2026-04-01 10:00:00,1,periodic_030,strong,0,0
+user_167,购买理财,weekly,weekday=3,2026-04-02 11:00:00,1,periodic_031,strong,0,0
+user_219,给朋友转账,weekly,weekday=4,2026-04-03 08:00:00,1,periodic_032,strong,0,0
+user_151,查余额,weekly,weekday=5,2026-04-04 09:00:00,1,periodic_033,strong,0,0
+user_080,工资转账,weekly,weekday=6,2026-04-05 10:00:00,1,periodic_034,strong,0,0
+user_056,查账单,weekly,weekday=0,2026-04-06 11:00:00,1,periodic_035,strong,0,0
+user_117,基金定投,weekly,weekday=1,2026-04-07 08:00:00,1,periodic_036,strong,0,0
+user_014,还信用卡,weekly,weekday=2,2026-04-01 09:00:00,1,periodic_037,strong,0,0
+user_200,查余额,weekly,weekday=3,2026-04-02 10:00:00,1,periodic_038,strong,0,0
+user_194,工资转账,weekly,weekday=4,2026-04-03 11:00:00,1,periodic_039,strong,0,0
+user_120,基金定投,weekly,weekday=5,2026-04-04 08:00:00,1,periodic_040,strong,0,0
+user_109,给朋友转账,weekly,weekday=6,2026-04-05 09:00:00,1,periodic_041,strong,0,0
+user_164,购买理财,weekly,weekday=0,2026-04-06 10:00:00,1,periodic_042,strong,0,0
+user_186,工资转账,weekly,weekday=1,2026-04-07 11:00:00,1,periodic_043,strong,0,0
+user_191,信用卡账单,weekly,weekday=2,2026-04-01 08:00:00,1,periodic_044,strong,0,0
+user_095,查余额,weekly,weekday=3,2026-04-02 09:00:00,1,periodic_045,strong,0,0
+user_050,查账单,weekly,weekday=4,2026-04-03 10:00:00,1,periodic_046,strong,0,0
+user_213,基金定投,weekly,weekday=5,2026-04-04 11:00:00,1,periodic_047,strong,0,0
+user_040,给朋友转账,monthly,day~10,2026-04-10 08:00:00,1,periodic_048,strong,0,0
+user_022,信用卡账单,monthly,day~15,2026-04-15 09:00:00,1,periodic_049,strong,0,0
+user_222,给朋友转账,monthly,day~25,2026-04-25 10:00:00,1,periodic_050,strong,0,0
+user_188,查余额,monthly,day~10,2026-04-10 11:00:00,1,periodic_051,strong,0,0
+user_217,查余额,monthly,day~15,2026-04-15 08:00:00,1,periodic_052,strong,0,0
+user_168,查余额,monthly,day~25,2026-04-25 09:00:00,1,periodic_053,strong,0,0
+user_032,查账单,monthly,day~10,2026-04-10 10:00:00,1,periodic_054,strong,0,0
+user_172,还信用卡,monthly,day~15,2026-04-15 11:00:00,1,periodic_055,strong,0,0
+user_115,查余额,monthly,day~25,2026-04-25 08:00:00,1,periodic_056,strong,0,0
+user_068,购买理财,monthly,day~10,2026-04-10 09:00:00,1,periodic_057,strong,0,0
+user_047,购买理财,monthly,day~15,2026-04-15 10:00:00,1,periodic_058,strong,0,0
+user_096,还信用卡,monthly,day~25,2026-04-25 11:00:00,1,periodic_059,strong,0,0
+user_008,信用卡账单,monthly,day~10,2026-04-10 08:00:00,1,periodic_060,strong,0,0
+user_067,购买理财,monthly,day~15,2026-04-15 09:00:00,1,periodic_061,strong,0,0
+user_208,购买理财,monthly,day~25,2026-04-25 10:00:00,1,periodic_062,strong,0,0
+user_057,购买理财,monthly,day~10,2026-04-10 11:00:00,1,periodic_063,strong,0,0
+user_126,查余额,monthly,day~15,2026-04-15 08:00:00,1,periodic_064,strong,0,0
+user_128,基金定投,monthly,day~25,2026-04-25 09:00:00,1,periodic_065,strong,0,0
+user_051,还信用卡,monthly,day~10,2026-04-10 10:00:00,1,periodic_066,strong,0,0
+user_073,查余额,monthly,day~15,2026-04-15 11:00:00,1,periodic_067,strong,0,0
+user_174,查余额,monthly,day~25,2026-04-25 08:00:00,1,periodic_068,strong,0,0
+user_148,查账单,monthly,day~10,2026-04-10 09:00:00,1,periodic_069,strong,0,0
+user_111,还信用卡,interval,every 14 days,2026-04-14 10:00:00,1,periodic_070,strong,0,0
+user_069,给朋友转账,interval,every 30 days,2026-04-30 11:00:00,1,periodic_071,strong,0,0
+user_165,工资转账,interval,every 14 days,2026-04-14 08:00:00,1,periodic_072,strong,0,0
+user_084,给朋友转账,interval,every 30 days,2026-04-30 09:00:00,1,periodic_073,strong,0,0
+user_131,给朋友转账,interval,every 14 days,2026-04-14 10:00:00,1,periodic_074,strong,0,0
+user_127,给朋友转账,interval,every 30 days,2026-04-30 11:00:00,1,periodic_075,strong,0,0
+user_134,查账单,interval,every 14 days,2026-04-14 08:00:00,1,periodic_076,strong,0,0
+user_001,购买理财,interval,every 30 days,2026-04-30 09:00:00,1,periodic_077,strong,0,0
+user_143,工资转账,interval,every 14 days,2026-04-14 10:00:00,1,periodic_078,strong,0,0
+user_183,还信用卡,interval,every 30 days,2026-04-30 11:00:00,1,periodic_079,strong,0,0
+user_089,查余额,interval,every 14 days,2026-04-14 08:00:00,1,periodic_080,strong,0,0
+user_012,工资转账,interval,every 30 days,2026-04-30 09:00:00,1,periodic_081,strong,0,0
+user_030,购买理财,interval,every 14 days,2026-04-14 10:00:00,1,periodic_082,strong,0,0
+user_055,还信用卡,interval,every 30 days,2026-04-30 11:00:00,1,periodic_083,strong,0,0
+user_153,基金定投,interval,every 14 days,2026-04-14 08:00:00,1,periodic_084,strong,0,0
+user_054,给朋友转账,interval,every 30 days,2026-04-30 09:00:00,1,periodic_085,strong,0,0
+user_016,信用卡账单,interval,every 14 days,2026-04-14 10:00:00,1,periodic_086,strong,0,0
+user_025,信用卡账单,interval,every 30 days,2026-04-30 11:00:00,1,periodic_087,strong,0,0
+user_209,基金定投,interval,every 14 days,2026-04-14 08:00:00,1,periodic_088,strong,0,0
+user_038,还信用卡,interval,every 30 days,2026-04-30 09:00:00,1,periodic_089,strong,0,0
+user_049,信用卡账单,daily,every 1 day,2026-04-01 10:00:00,1,periodic_090,weak,0,2
+user_074,还信用卡,daily,every 1 day,2026-04-01 11:00:00,1,periodic_091,weak,0,1
+user_106,信用卡账单,daily,every 1 day,2026-04-01 08:00:00,1,periodic_092,weak,0,1
+user_192,查余额,daily,every 1 day,2026-04-01 09:00:00,1,periodic_093,weak,0,2
+user_091,购买理财,daily,every 1 day,2026-04-01 10:00:00,1,periodic_094,weak,0,1
+user_185,购买理财,daily,every 1 day,2026-04-01 11:00:00,1,periodic_095,weak,0,2
+user_204,购买理财,daily,every 1 day,2026-04-01 08:00:00,1,periodic_096,weak,0,3
+user_108,购买理财,daily,every 1 day,2026-04-01 09:00:00,1,periodic_097,weak,0,3
+user_063,查余额,daily,every 1 day,2026-04-01 10:00:00,1,periodic_098,weak,0,3
+user_024,查余额,daily,every 1 day,2026-04-01 11:00:00,1,periodic_099,weak,0,1
+user_005,购买理财,daily,every 1 day,2026-04-01 08:00:00,1,periodic_100,weak,0,2
+user_027,信用卡账单,daily,every 1 day,2026-04-01 09:00:00,1,periodic_101,weak,0,2
+user_132,还信用卡,daily,every 1 day,2026-04-01 10:00:00,1,periodic_102,weak,0,2
+user_136,查余额,daily,every 1 day,2026-04-01 11:00:00,1,periodic_103,weak,0,2
+user_094,给朋友转账,daily,every 1 day,2026-04-01 08:00:00,1,periodic_104,weak,0,1
+user_216,购买理财,daily,every 1 day,2026-04-01 09:00:00,1,periodic_105,weak,0,1
+user_052,信用卡账单,daily,every 1 day,2026-04-01 10:00:00,1,periodic_106,weak,0,1
+user_177,还信用卡,daily,every 1 day,2026-04-01 11:00:00,1,periodic_107,weak,0,3
+user_173,还信用卡,daily,every 1 day,2026-04-01 08:00:00,1,periodic_108,weak,0,2
+user_023,查余额,daily,every 1 day,2026-04-01 09:00:00,1,periodic_109,weak,0,2
+user_162,查账单,daily,every 1 day,2026-04-01 10:00:00,1,periodic_110,weak,0,3
+user_196,基金定投,daily,every 1 day,2026-04-01 11:00:00,1,periodic_111,weak,0,3
+user_011,查账单,daily,every 1 day,2026-04-01 08:00:00,1,periodic_112,weak,0,1
+user_159,工资转账,daily,every 1 day,2026-04-01 09:00:00,1,periodic_113,weak,0,3
+user_146,信用卡账单,weekly,weekday=2,2026-04-01 10:00:00,1,periodic_114,weak,1,0
+user_231,查账单,weekly,weekday=3,2026-04-02 11:00:00,1,periodic_115,weak,1,0
+user_155,基金定投,weekly,weekday=4,2026-04-03 08:00:00,1,periodic_116,weak,1,0
+user_121,还信用卡,weekly,weekday=5,2026-04-04 09:00:00,1,periodic_117,weak,1,0
+user_021,查余额,weekly,weekday=6,2026-04-05 10:00:00,1,periodic_118,weak,1,0
+user_087,信用卡账单,weekly,weekday=0,2026-04-06 11:00:00,1,periodic_119,weak,1,0
+user_160,信用卡账单,weekly,weekday=1,2026-04-07 08:00:00,1,periodic_120,weak,1,0
+user_082,查余额,weekly,weekday=2,2026-04-01 09:00:00,1,periodic_121,weak,1,0
+user_228,基金定投,weekly,weekday=3,2026-04-02 10:00:00,1,periodic_122,weak,1,0
+user_009,查余额,weekly,weekday=4,2026-04-03 11:00:00,1,periodic_123,weak,1,0
+user_180,还信用卡,weekly,weekday=5,2026-04-04 08:00:00,1,periodic_124,weak,1,0
+user_163,工资转账,weekly,weekday=6,2026-04-05 09:00:00,1,periodic_125,weak,1,0
+user_029,购买理财,weekly,weekday=0,2026-04-06 10:00:00,1,periodic_126,weak,1,0
+user_088,给朋友转账,weekly,weekday=1,2026-04-07 11:00:00,1,periodic_127,weak,1,0
+user_112,信用卡账单,weekly,weekday=2,2026-04-01 08:00:00,1,periodic_128,weak,1,0
+user_170,查余额,weekly,weekday=3,2026-04-02 09:00:00,1,periodic_129,weak,1,0
+user_041,查余额,weekly,weekday=4,2026-04-03 10:00:00,1,periodic_130,weak,1,0
+user_210,给朋友转账,weekly,weekday=5,2026-04-04 11:00:00,1,periodic_131,weak,1,0
+user_181,基金定投,weekly,weekday=6,2026-04-05 08:00:00,1,periodic_132,weak,1,0
+user_198,查余额,weekly,weekday=0,2026-04-06 09:00:00,1,periodic_133,weak,1,0
+user_234,工资转账,weekly,weekday=1,2026-04-07 10:00:00,1,periodic_134,weak,1,0
+user_065,信用卡账单,weekly,weekday=2,2026-04-01 11:00:00,1,periodic_135,weak,1,0
+user_215,查余额,weekly,weekday=3,2026-04-02 08:00:00,1,periodic_136,weak,1,0
+user_004,查余额,weekly,weekday=4,2026-04-03 09:00:00,1,periodic_137,weak,1,0
+user_197,给朋友转账,monthly,day~10,2026-04-10 10:00:00,1,periodic_138,weak,0,0
+user_224,查余额,monthly,day~15,2026-04-15 11:00:00,1,periodic_139,weak,0,0

@@ -1,0 +1,122 @@
+from __future__ import annotations
+
+import argparse
+from dataclasses import asdict
+from datetime import datetime, timezone
+import json
+import os
+from pathlib import Path
+from time import perf_counter
+from uuid import uuid4
+
+import pandas as pd
+
+from .profile_builder import ProfileConfig, build_user_profiles
+
+
+def _load_config(path: str | None) -> ProfileConfig:
+    if path is None:
+        return ProfileConfig()
+    with Path(path).open("r", encoding="utf-8") as handle:
+        values = json.load(handle)
+    if not isinstance(values, dict):
+        raise ValueError("config JSON must contain an object")
+    return ProfileConfig(**values)
+
+
+def _input_quality(
+    events: pd.DataFrame, reference_time: pd.Timestamp
+) -> dict[str, int]:
+    parsed_time = pd.to_datetime(events["event_time"], errors="coerce")
+    valid_required = (
+        events["user_id"].notna()
+        & events["action_name"].notna()
+        & parsed_time.notna()
+    )
+    future_events = valid_required & (parsed_time > reference_time)
+    valid_events = valid_required & ~future_events
+    return {
+        "input_row_count": int(len(events)),
+        "invalid_row_count": int((~valid_required).sum()),
+        "future_event_count": int(future_events.sum()),
+        "valid_event_count": int(valid_events.sum()),
+        "filtered_row_count": int((~valid_events).sum()),
+    }
+
+
+def _write_snapshot(
+    output_dir: Path,
+    profiles: dict[str, pd.DataFrame],
+    manifest: dict[str, object],
+    *,
+    encoding: str,
+) -> None:
+    output_dir.mkdir(parents=True, exist_ok=True)
+    staging_dir = output_dir / f".portrait-staging-{uuid4().hex}"
+    staging_dir.mkdir()
+    try:
+        for name, frame in profiles.items():
+            frame.to_csv(staging_dir / f"{name}.csv", index=False, encoding=encoding)
+        with (staging_dir / "run_manifest.json").open("w", encoding="utf-8") as handle:
+            json.dump(manifest, handle, ensure_ascii=False, indent=2, default=str)
+
+        for name in profiles:
+            os.replace(
+                staging_dir / f"{name}.csv",
+                output_dir / f"{name}.csv",
+            )
+        # The manifest is replaced last and marks a complete snapshot.
+        os.replace(
+            staging_dir / "run_manifest.json",
+            output_dir / "run_manifest.json",
+        )
+    finally:
+        if staging_dir.exists():
+            for path in staging_dir.iterdir():
+                path.unlink()
+            staging_dir.rmdir()
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Build bank app user behavior portraits.")
+    parser.add_argument("input_csv", help="CSV with user_id, action_name, event_time columns.")
+    parser.add_argument("output_dir", help="Directory for generated portrait CSV files.")
+    parser.add_argument("--now", default=None, help="Reference time, defaults to max event_time.")
+    parser.add_argument("--encoding", default="utf-8-sig", help="CSV encoding.")
+    parser.add_argument("--config", default=None, help="Optional ProfileConfig JSON file.")
+    args = parser.parse_args()
+
+    started_at = datetime.now(timezone.utc)
+    started = perf_counter()
+    events = pd.read_csv(
+        args.input_csv,
+        encoding=args.encoding,
+        dtype={"user_id": "string", "action_name": "string"},
+    )
+    config = _load_config(args.config)
+    profiles = build_user_profiles(events, now=args.now, config=config)
+    parsed_time = pd.to_datetime(events["event_time"], errors="coerce")
+    reference_time = (
+        pd.Timestamp(args.now)
+        if args.now is not None
+        else pd.Timestamp(parsed_time.max())
+    )
+    elapsed_seconds = perf_counter() - started
+    manifest: dict[str, object] = {
+        "profile_schema_version": 2,
+        "input_csv": str(Path(args.input_csv).resolve()),
+        "reference_time": reference_time.isoformat(),
+        "started_at_utc": started_at.isoformat(),
+        "finished_at_utc": datetime.now(timezone.utc).isoformat(),
+        "elapsed_seconds": round(elapsed_seconds, 6),
+        "config": asdict(config),
+        "input_quality": _input_quality(events, reference_time),
+        "output_row_counts": {name: int(len(frame)) for name, frame in profiles.items()},
+    }
+    _write_snapshot(
+        Path(args.output_dir), profiles, manifest, encoding=args.encoding
+    )
+
+
+if __name__ == "__main__":
+    main()
