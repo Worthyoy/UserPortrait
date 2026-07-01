@@ -513,7 +513,7 @@ transition_confidence = 8 / 10 = 0.80
 | `mid_active_days`            |      4 | 中活用户最低活跃天数                      | 调高会让更多用户进入低活           |
 | `recent_event_top_k`         |      3 | 每个用户保留最近行为事件数                | 调大输出更多最近行为，调小更聚焦   |
 
-说明：`high_recent_window_days`、`mid_recent_window_days`、`low_recent_window_days`、`low_recent_fallback_events` 和 `recent_top_k` 是旧版最近任务窗口逻辑参数，当前最近任务不再使用这些参数。
+旧版最近任务窗口参数已删除，当前最近任务只使用 `recent_event_top_k`。
 
 ### 4.3 周期任务参数
 
@@ -524,8 +524,6 @@ transition_confidence = 8 / 10 = 0.80
 | `weekly_detection_window_days`          |     56 | weekly 检测窗口，只看最近 8 周                                         | 调大可保留更多周周期证据，调小更强调近期有效 |
 | `monthly_detection_window_days`         |    186 | monthly 检测窗口，只看最近约 6 个月                                    | 调大可保留更多月周期证据，调小更强调近期有效 |
 | `interval_detection_recent_occurrences` |      6 | interval 检测最近活跃日期数                                            | 调大更稳健，调小更敏感     |
-| `daily_min_occurrences`                 |      5 | 保留参数，当前 daily 实际使用全局最低次数和 7 天检测窗口               | 当前不直接参与 daily 判断  |
-| `daily_min_span_days`                   |      5 | 保留参数，当前 daily 实际使用 7 天检测窗口和平均间隔门槛               | 当前不直接参与 daily 判断  |
 | `weekly_min_occurrences`                |      4 | 周周期窗口内最低活跃日期数                                             | 调高减少偶然周几集中       |
 | `weekly_min_span_days`                  |     21 | 周周期窗口内最低跨度                                                   | 调高要求跨越更多周         |
 | `monthly_min_months`                    |      3 | 月周期窗口内最低月份数                                                 | 调高可要求更长期证据       |
@@ -533,14 +531,32 @@ transition_confidence = 8 / 10 = 0.80
 | `calendar_concentration`                |   0.75 | 周/月日历集中度阈值，表示至少 75% 行为集中在同一星期几或同一月日期附近 | 调高减少误报               |
 | `interval_max_min_ratio`                |   1.25 | 最大间隔/最小间隔上限                                                  | 调低更严格                 |
 | `min_period_confidence`                 |   0.70 | 周期输出最低置信度                                                     | 调高减少误报               |
+| `daily_max_avg_interval_days`           |    1.5 | daily 最大平均间隔                                                     | 调低会要求更连续           |
+| `weekly_anchor_tolerance_days`          |      1 | 周期锚点允许偏离星期几的天数                                           | 调大可容忍更多日期抖动     |
+| `monthly_anchor_tolerance_days`         |      2 | 月周期锚点允许偏离月日期的天数                                         | 调大可容忍更多日期抖动     |
+| `monthly_min_span_days`                 |     45 | 月周期证据最低日期跨度                                                 | 调高要求更长期证据         |
+| `interval_min_occurrences`              |      4 | interval 最低活跃日期数                                                | 调高更稳健                 |
+| `interval_min_avg_days`                 |    2.0 | interval 最小平均间隔                                                  | 用于和 daily 分开          |
+| `interval_min_span_cycles`              |    3.0 | interval 最低跨度周期数                                                | 调高减少短期巧合           |
+| `long_interval_priority_days`           |    7.5 | 长 interval 候选优先阈值                                               | 调整候选类型优先级         |
+| `period_cv_weight`                      |   0.65 | 周期置信度中的稳定性权重                                               | 与集中度权重之和必须为 1   |
+| `period_concentration_weight`           |   0.35 | 周期置信度中的集中度权重                                               | 与稳定性权重之和必须为 1   |
+| `daily_concentration_prior`             |   0.95 | daily 置信度使用的集中度先验                                           | 调整 daily 评分            |
+| `interval_concentration_prior`          |   0.90 | interval 置信度使用的集中度先验                                        | 调整 interval 评分         |
 
 ### 4.4 近期高频参数
 
 | 参数                               | 默认值 | 业务含义              | 调整影响               |
 | ---------------------------------- | -----: | --------------------- | ---------------------- |
-| `high_freq_recent_count_7d`      |      4 | 近 7 天最低次数       | 调高减少误报           |
+| `high_freq_min_count`           |      4 | 所选近期窗口最低次数  | 调高减少误报           |
 | `high_freq_lift`                 |    3.0 | 相对历史最低放大倍数  | 调高只保留更明显突增   |
 | `high_freq_recent_concentration` |   0.60 | 近 7 天占近 30 天比例 | 调高更强调近期集中爆发 |
+| `high_freq_recent_window_days` |      7 | 普通近期统计窗口      | 调整近期统计跨度       |
+| `high_freq_low_activity_window_days` | 30 | 低活用户近期统计窗口 | 调整低活用户召回跨度   |
+| `high_freq_baseline_window_days` |    90 | 普通历史基线窗口      | 调整 lift 基线跨度     |
+| `high_freq_low_activity_baseline_window_days` | 180 | 低活用户历史基线窗口 | 调整低活 lift 基线跨度 |
+| `high_freq_baseline_floor`      |    0.5 | 历史基线最小分母      | 防止极小基线放大 lift  |
+| `high_freq_trend_lift_cap`      |   10.0 | 趋势评分 lift 上限    | 控制极端 lift 的评分   |
 
 ### 4.5 历史高频参数
 
@@ -562,8 +578,6 @@ transition_confidence = 8 / 10 = 0.80
 | 参数                             | 默认值 | 业务含义                   | 调整影响                   |
 | -------------------------------- | -----: | -------------------------- | -------------------------- |
 | `session_gap_minutes`          |     30 | session 切分间隔           | 调大链路更长，调小链路更碎 |
-| `min_sequence_support`         |      2 | 保留参数，当前实际筛选使用 2 步/长链路分档参数 | 当前不直接参与筛选 |
-| `min_sequence_confidence`      |   0.50 | 保留参数，当前实际筛选使用 2 步/长链路分档参数 | 当前不直接参与筛选 |
 | `sequence_min_len`             |      2 | 最短链路长度               | 调大可减少短链路           |
 | `sequence_max_len`             |      5 | 最长链路长度               | 调大可捕获更长流程         |
 | `min_pair_sequence_support`    |      3 | 2 步链路最低重复次数       | 调高减少短链路误报         |
@@ -572,6 +586,14 @@ transition_confidence = 8 / 10 = 0.80
 | `min_long_sequence_confidence` |   0.60 | 3-5 步链路最低转移置信度   | 调高只保留更稳定长链路     |
 | `subsequence_support_margin`   |      2 | 短子链路保留所需支持度优势 | 调高会更倾向过滤短子链路   |
 | `sequence_top_k`               |      5 | 每个用户最多输出链路数     | 调大输出更全，调小更聚焦   |
+| `sequence_global_user_ratio_threshold` | 0.80 | 公共链路用户覆盖率阈值 | 调低会更早启用公共链路过滤 |
+| `sequence_global_min_confidence` | 0.75 | 公共链路最低置信度 | 调高会过滤更多公共路径     |
+| `sequence_recency_decay_days` | 30.0 | 链路评分新鲜度衰减尺度 | 调大降低时间衰减速度       |
+| `sequence_pair_length_weight` | 1.0 | 2 步链路长度权重 | 调整短链路评分             |
+| `sequence_triple_length_weight` | 1.2 | 3 步链路长度权重 | 调整三步链路评分           |
+| `sequence_long_length_weight` | 1.3 | 4-5 步链路长度权重 | 调整长链路评分             |
+
+所有比例、窗口关系、评分权重和序列长度关系均在 `ProfileConfig` 创建时校验。旧 JSON 字段 `high_freq_recent_count_7d` 会迁移为 `high_freq_min_count` 并发出弃用提示；新旧值冲突时直接报错。
 
 ## 5. 当前验证结果
 
@@ -684,7 +706,7 @@ python evaluate_profiles.py sample_data portrait_output --fail-on-threshold
 
 后续代码审查修复了三项高优先级问题：所有输入时间统一转换到上海业务时区；单事件 session 正确计入链路前缀分母；同一时间戳的多个行为作为顺序歧义边界，不再按行为名伪造转移。修复后固定时段穷举指标和干净/脏输入一致率仍保持 `1.000`。
 
-最终完整回归结果为 `50 passed`。
+参数集中化改造后的完整回归结果为 `63 passed`，快速与大型质量门禁均通过。
 
 完整命令：
 

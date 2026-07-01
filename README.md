@@ -70,12 +70,22 @@ python -m user_portrait.cli events.csv output_profiles --now "2026-03-31 12:00:0
 {
   "business_timezone": "Asia/Shanghai",
   "activity_window_days": 30,
+  "daily_max_avg_interval_days": 1.5,
+  "monthly_min_span_days": 45,
+  "high_freq_min_count": 4,
+  "high_freq_recent_window_days": 7,
   "time_period_min_count": 4,
   "time_period_min_active_days": 3,
   "time_period_min_share": 0.7,
+  "sequence_recency_decay_days": 30.0,
   "sequence_top_k": 5
 }
 ```
+
+All tunable detection windows, thresholds, score weights, and Top K limits are
+defined by `ProfileConfig` and validated when the configuration is created. The
+former `high_freq_recent_count_7d` JSON field is accepted as a deprecated alias
+for `high_freq_min_count`; conflicting old and new values are rejected.
 
 ## Synthetic Validation Data
 

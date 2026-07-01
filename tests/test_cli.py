@@ -59,6 +59,10 @@ def test_cli_reads_string_ids_and_builds_manifest(monkeypatch) -> None:
     manifest = captured["manifest"]
     assert manifest["profile_schema_version"] == 2
     assert manifest["reference_time"] == "2026-03-31T12:00:00"
+    assert manifest["config"]["daily_max_avg_interval_days"] == 1.5
+    assert manifest["config"]["high_freq_min_count"] == 4
+    assert manifest["config"]["sequence_recency_decay_days"] == 30.0
+    assert "high_freq_recent_count_7d" not in manifest["config"]
     assert manifest["input_quality"] == {
         "input_row_count": 3,
         "invalid_row_count": 1,

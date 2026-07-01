@@ -3,7 +3,7 @@ from __future__ import annotations
 from collections import Counter
 from dataclasses import dataclass
 from datetime import datetime
-from math import exp, log1p, sqrt
+from math import exp, isclose, log1p, sqrt
 from statistics import median
 from typing import Any
 import warnings
@@ -22,17 +22,8 @@ class ProfileConfig:
     high_active_days: int = 15
     high_active_percentile: float = 0.80
     mid_active_days: int = 4
-    # Deprecated: retained for compatibility with the former window-based
-    # recent-task implementation. Recent tasks now use recent_event_top_k.
-    high_recent_window_days: int = 3
-    mid_recent_window_days: int = 7
-    low_recent_window_days: int = 30
-    low_recent_fallback_events: int = 5
-    recent_top_k: int = 10
     recent_event_top_k: int = 3
     min_period_occurrences: int = 3
-    daily_min_occurrences: int = 5
-    daily_min_span_days: int = 5
     weekly_min_occurrences: int = 4
     weekly_min_span_days: int = 21
     monthly_min_months: int = 3
@@ -44,26 +35,204 @@ class ProfileConfig:
     calendar_concentration: float = 0.75
     interval_max_min_ratio: float = 1.25
     min_period_confidence: float = 0.70
+    daily_max_avg_interval_days: float = 1.5
+    weekly_anchor_tolerance_days: int = 1
+    monthly_anchor_tolerance_days: int = 2
+    monthly_min_span_days: int = 45
+    interval_min_occurrences: int = 4
+    interval_min_avg_days: float = 2.0
+    interval_min_span_cycles: float = 3.0
+    long_interval_priority_days: float = 7.5
+    period_cv_weight: float = 0.65
+    period_concentration_weight: float = 0.35
+    daily_concentration_prior: float = 0.95
+    interval_concentration_prior: float = 0.90
     session_gap_minutes: int = 30
     sequence_min_len: int = 2
     sequence_max_len: int = 5
-    # Deprecated: the pair/long-sequence thresholds below are authoritative.
-    min_sequence_support: int = 2
-    min_sequence_confidence: float = 0.50
     min_pair_sequence_support: int = 3
     min_pair_sequence_confidence: float = 0.75
     min_long_sequence_support: int = 2
     min_long_sequence_confidence: float = 0.60
     subsequence_support_margin: int = 2
     sequence_top_k: int = 5
-    high_freq_recent_count_7d: int = 4
+    sequence_global_user_ratio_threshold: float = 0.80
+    sequence_global_min_confidence: float = 0.75
+    sequence_recency_decay_days: float = 30.0
+    sequence_pair_length_weight: float = 1.0
+    sequence_triple_length_weight: float = 1.2
+    sequence_long_length_weight: float = 1.3
+    high_freq_min_count: int = 4
     high_freq_lift: float = 3.0
     high_freq_recent_concentration: float = 0.60
+    high_freq_recent_window_days: int = 7
+    high_freq_low_activity_window_days: int = 30
+    high_freq_baseline_window_days: int = 90
+    high_freq_low_activity_baseline_window_days: int = 180
+    high_freq_baseline_floor: float = 0.5
+    high_freq_trend_lift_cap: float = 10.0
     frequent_task_top_k: int = 5
     time_period_min_count: int = 4
     time_period_min_active_days: int = 3
     time_period_min_share: float = 0.70
     time_period_top_k: int = 5
+
+    def __post_init__(self) -> None:
+        try:
+            ZoneInfo(self.business_timezone)
+        except (ZoneInfoNotFoundError, TypeError) as exc:
+            raise ValueError(
+                f"invalid business timezone: {self.business_timezone}"
+            ) from exc
+
+        positive_int_fields = (
+            "activity_window_days",
+            "recent_event_top_k",
+            "min_period_occurrences",
+            "weekly_min_occurrences",
+            "monthly_min_months",
+            "interval_min_occurrences",
+            "session_gap_minutes",
+            "sequence_min_len",
+            "sequence_max_len",
+            "min_pair_sequence_support",
+            "min_long_sequence_support",
+            "sequence_top_k",
+            "high_freq_min_count",
+            "high_freq_recent_window_days",
+            "high_freq_low_activity_window_days",
+            "high_freq_baseline_window_days",
+            "high_freq_low_activity_baseline_window_days",
+            "frequent_task_top_k",
+            "time_period_min_count",
+            "time_period_min_active_days",
+            "time_period_top_k",
+        )
+        for name in positive_int_fields:
+            self._validate_integer(name, minimum=1)
+
+        nonnegative_int_fields = (
+            "high_active_days",
+            "mid_active_days",
+            "weekly_min_span_days",
+            "daily_detection_window_days",
+            "weekly_detection_window_days",
+            "monthly_detection_window_days",
+            "interval_detection_recent_occurrences",
+            "weekly_anchor_tolerance_days",
+            "monthly_anchor_tolerance_days",
+            "monthly_min_span_days",
+            "subsequence_support_margin",
+        )
+        for name in nonnegative_int_fields:
+            self._validate_integer(name, minimum=0)
+
+        if self.sequence_min_len < 2:
+            self._invalid("sequence_min_len", "must be at least 2")
+        if self.sequence_min_len > self.sequence_max_len:
+            self._invalid(
+                "sequence_min_len",
+                f"must not exceed sequence_max_len={self.sequence_max_len}",
+            )
+        if self.weekly_anchor_tolerance_days > 3:
+            self._invalid("weekly_anchor_tolerance_days", "must not exceed 3")
+        if self.high_freq_low_activity_window_days < self.high_freq_recent_window_days:
+            self._invalid(
+                "high_freq_low_activity_window_days",
+                "must be at least high_freq_recent_window_days",
+            )
+        if self.high_freq_baseline_window_days <= self.high_freq_recent_window_days:
+            self._invalid(
+                "high_freq_baseline_window_days",
+                "must exceed high_freq_recent_window_days",
+            )
+        if (
+            self.high_freq_low_activity_baseline_window_days
+            <= self.high_freq_low_activity_window_days
+        ):
+            self._invalid(
+                "high_freq_low_activity_baseline_window_days",
+                "must exceed high_freq_low_activity_window_days",
+            )
+
+        proportion_fields = (
+            "high_active_percentile",
+            "calendar_concentration",
+            "min_period_confidence",
+            "period_cv_weight",
+            "period_concentration_weight",
+            "daily_concentration_prior",
+            "interval_concentration_prior",
+            "min_pair_sequence_confidence",
+            "min_long_sequence_confidence",
+            "sequence_global_user_ratio_threshold",
+            "sequence_global_min_confidence",
+            "high_freq_recent_concentration",
+            "time_period_min_share",
+        )
+        for name in proportion_fields:
+            self._validate_number(name, minimum=0.0, maximum=1.0)
+
+        positive_number_fields = (
+            "daily_max_avg_interval_days",
+            "interval_min_avg_days",
+            "interval_min_span_cycles",
+            "interval_max_min_ratio",
+            "sequence_recency_decay_days",
+            "sequence_pair_length_weight",
+            "sequence_triple_length_weight",
+            "sequence_long_length_weight",
+            "high_freq_lift",
+            "high_freq_baseline_floor",
+            "high_freq_trend_lift_cap",
+        )
+        for name in positive_number_fields:
+            self._validate_number(name, minimum=0.0, minimum_inclusive=False)
+
+        self._validate_number("strong_period_cv", minimum=0.0)
+        self._validate_number("long_interval_priority_days", minimum=0.0)
+        if self.interval_max_min_ratio < 1.0:
+            self._invalid("interval_max_min_ratio", "must be at least 1.0")
+        if not isclose(
+            self.period_cv_weight + self.period_concentration_weight,
+            1.0,
+            rel_tol=0.0,
+            abs_tol=1e-9,
+        ):
+            self._invalid(
+                "period_cv_weight",
+                "period_cv_weight + period_concentration_weight must equal 1.0",
+            )
+
+    def _validate_integer(self, name: str, *, minimum: int) -> None:
+        value = getattr(self, name)
+        if isinstance(value, bool) or not isinstance(value, int) or value < minimum:
+            self._invalid(name, f"must be an integer >= {minimum}")
+
+    def _validate_number(
+        self,
+        name: str,
+        *,
+        minimum: float,
+        maximum: float | None = None,
+        minimum_inclusive: bool = True,
+    ) -> None:
+        value = getattr(self, name)
+        if isinstance(value, bool) or not isinstance(value, (int, float)):
+            self._invalid(name, "must be numeric")
+        below_minimum = value < minimum if minimum_inclusive else value <= minimum
+        if below_minimum or (maximum is not None and value > maximum):
+            if maximum is not None:
+                requirement = f"within [{minimum}, {maximum}]"
+            elif minimum_inclusive:
+                requirement = f">= {minimum}"
+            else:
+                requirement = f"> {minimum}"
+            self._invalid(name, f"must be {requirement}")
+
+    def _invalid(self, name: str, message: str) -> None:
+        value = getattr(self, name)
+        raise ValueError(f"invalid ProfileConfig.{name}={value!r}: {message}")
 
 
 def build_user_profiles(
@@ -232,14 +401,6 @@ def _build_activity_levels(
     return stats.sort_values("user_id").reset_index(drop=True)
 
 
-def _recent_window_days(level: str, cfg: ProfileConfig) -> int:
-    if level == "high":
-        return cfg.high_recent_window_days
-    if level == "middle":
-        return cfg.mid_recent_window_days
-    return cfg.low_recent_window_days
-
-
 def _build_recent_tasks(
     events: pd.DataFrame,
     activity: pd.DataFrame,
@@ -317,18 +478,19 @@ def _detect_period(
         daily_stats is not None
         and len(daily_dates) >= cfg.min_period_occurrences
         and daily_dates[-1] == now.normalize()
-        and daily_stats["avg_interval"] <= 1.5
+        and daily_stats["avg_interval"] <= cfg.daily_max_avg_interval_days
     ):
         candidate = _period_candidate(
             "daily",
             "every 1 day",
             daily_dates[-1] + pd.Timedelta(days=1),
             daily_stats["cv"],
-            0.95,
+            cfg.daily_concentration_prior,
             (
                 f"最近 {cfg.daily_detection_window_days} 天内 {len(daily_dates)} "
                 f"个活跃日平均间隔 {daily_stats['avg_interval']:.1f} 天"
             ),
+            cfg,
         )
         candidate["_timestamps"] = daily_timestamps
         candidates.append(candidate)
@@ -348,7 +510,8 @@ def _detect_period(
         weekly_near_timestamps = [
             value
             for value in weekly_timestamps
-            if _weekday_distance(value.weekday(), weekday) <= 1
+            if _weekday_distance(value.weekday(), weekday)
+            <= cfg.weekly_anchor_tolerance_days
         ]
         weekly_anchor_timestamps, weekly_anchor_dates, weekly_anchor_stats = (
             _best_period_dates_for_cv(
@@ -371,6 +534,7 @@ def _detect_period(
                     f"最近 {cfg.weekly_detection_window_days} 天内 "
                     f"{concentration:.0%} 的行为发生在星期 {weekday + 1}"
                 ),
+                cfg,
             )
             candidate["_timestamps"] = weekly_anchor_timestamps
             candidates.append(candidate)
@@ -381,12 +545,17 @@ def _detect_period(
     monthly_dates = _unique_dates(monthly_timestamps)
     monthly_stats = _date_interval_stats(monthly_dates)
     month_anchor, month_concentration = (
-        _month_day_anchor_values([value.day for value in monthly_timestamps])
+        _month_day_anchor_values(
+            [value.day for value in monthly_timestamps],
+            cfg.monthly_anchor_tolerance_days,
+        )
         if monthly_timestamps
         else (0, 0.0)
     )
     monthly_anchor_timestamps = [
-        value for value in monthly_timestamps if abs(value.day - month_anchor) <= 2
+        value
+        for value in monthly_timestamps
+        if abs(value.day - month_anchor) <= cfg.monthly_anchor_tolerance_days
     ]
     monthly_anchor_dates = _unique_dates(monthly_anchor_timestamps)
     monthly_anchor_stats = _date_interval_stats(monthly_anchor_dates)
@@ -394,7 +563,7 @@ def _detect_period(
     if (
         monthly_anchor_stats is not None
         and month_count >= cfg.monthly_min_months
-        and monthly_anchor_stats["span_days"] >= 45
+        and monthly_anchor_stats["span_days"] >= cfg.monthly_min_span_days
         and month_concentration >= cfg.calendar_concentration
     ):
         candidate = _period_candidate(
@@ -407,6 +576,7 @@ def _detect_period(
                 f"最近 {cfg.monthly_detection_window_days} 天内 "
                 f"{month_concentration:.0%} 的行为集中在每月 {month_anchor} 日前后"
             ),
+            cfg,
         )
         candidate["_timestamps"] = monthly_anchor_timestamps
         candidates.append(candidate)
@@ -423,10 +593,11 @@ def _detect_period(
         max_interval = max(interval_stats["intervals"])
         interval_ratio = max_interval / min_interval if min_interval > 0 else 999.0
         if (
-            len(interval_dates) >= 4
-            and len(interval_stats["intervals"]) >= 3
-            and interval_stats["avg_interval"] >= 2
-            and interval_stats["span_days"] >= interval_stats["avg_interval"] * 3
+            len(interval_dates) >= cfg.interval_min_occurrences
+            and len(interval_stats["intervals"]) >= cfg.interval_min_occurrences - 1
+            and interval_stats["avg_interval"] >= cfg.interval_min_avg_days
+            and interval_stats["span_days"]
+            >= interval_stats["avg_interval"] * cfg.interval_min_span_cycles
             and interval_stats["cv"] <= cfg.strong_period_cv
             and interval_ratio <= cfg.interval_max_min_ratio
         ):
@@ -436,11 +607,12 @@ def _detect_period(
                 f"every {interval_days} days",
                 interval_dates[-1] + pd.Timedelta(days=interval_days),
                 interval_stats["cv"],
-                0.90,
+                cfg.interval_concentration_prior,
                 (
                     f"最近 {len(interval_dates)} 个活跃日相邻行为间隔约 "
                     f"{interval_days} 天，CV={interval_stats['cv']:.2f}"
                 ),
+                cfg,
             )
             candidate["_timestamps"] = interval_timestamps
             candidates.append(candidate)
@@ -460,7 +632,8 @@ def _detect_period(
     interval_candidates = [
         item
         for item in viable_candidates
-        if item["period_type"] == "interval" and _interval_days_from_candidate(item) > 7.5
+        if item["period_type"] == "interval"
+        and _interval_days_from_candidate(item) > cfg.long_interval_priority_days
     ]
     selected = (
         max(monthly_candidates, key=lambda item: item["confidence"])
@@ -562,9 +735,14 @@ def _period_candidate(
     cv: float,
     concentration: float,
     evidence: str,
+    cfg: ProfileConfig,
 ) -> dict[str, Any]:
     cv_score = max(0.0, min(1.0, 1.0 - cv))
-    confidence = round(0.65 * cv_score + 0.35 * concentration, 6)
+    confidence = round(
+        cfg.period_cv_weight * cv_score
+        + cfg.period_concentration_weight * concentration,
+        6,
+    )
     return {
         "period_type": period_type,
         "period_value": period_value,
@@ -601,14 +779,12 @@ def _next_weekday(last_date: pd.Timestamp, weekday: int) -> pd.Timestamp:
     return last_date + pd.Timedelta(days=delta)
 
 
-def _month_day_anchor(times: pd.Series) -> tuple[int, float]:
-    return _month_day_anchor_values(times.dt.day.astype(int).tolist())
-
-
-def _month_day_anchor_values(days: list[int]) -> tuple[int, float]:
+def _month_day_anchor_values(
+    days: list[int], tolerance_days: int
+) -> tuple[int, float]:
     median_day = float(median(days))
     concentrations = {
-        day: sum(abs(value - day) <= 2 for value in days) / len(days)
+        day: sum(abs(value - day) <= tolerance_days for value in days) / len(days)
         for day in range(1, 32)
     }
     best_concentration = max(concentrations.values())
@@ -651,27 +827,50 @@ def _build_recent_high_freq_tasks(
             continue
 
         level = activity_by_user[user_id]
-        count_7d = _count_between(group, now - pd.Timedelta(days=7), now)
-        count_30d = _count_between(group, now - pd.Timedelta(days=30), now)
-        recent_concentration = count_7d / max(count_30d, 1)
-        baseline_7d = _baseline_average(group, now, recent_days=7, baseline_days=90)
-        lift_7d = count_7d / max(baseline_7d, 0.5)
+        recent_window = cfg.high_freq_recent_window_days
+        low_activity_window = cfg.high_freq_low_activity_window_days
+        recent_window_count = _count_between(
+            group, now - pd.Timedelta(days=recent_window), now
+        )
+        low_activity_window_count = _count_between(
+            group, now - pd.Timedelta(days=low_activity_window), now
+        )
+        recent_concentration = recent_window_count / max(low_activity_window_count, 1)
+        recent_baseline = _baseline_average(
+            group,
+            now,
+            recent_days=recent_window,
+            baseline_days=cfg.high_freq_baseline_window_days,
+        )
+        recent_lift = recent_window_count / max(
+            recent_baseline, cfg.high_freq_baseline_floor
+        )
 
-        selected_window = 7
-        recent_count = count_7d
-        baseline = baseline_7d
-        lift = lift_7d
+        selected_window = recent_window
+        recent_count = recent_window_count
+        baseline = recent_baseline
+        lift = recent_lift
 
         if level == "low":
-            baseline_30d = _baseline_average(group, now, recent_days=30, baseline_days=180)
-            lift_30d = count_30d / max(baseline_30d, 0.5)
-            if count_30d >= cfg.high_freq_recent_count_7d and lift_30d >= cfg.high_freq_lift:
-                selected_window = 30
-                recent_count = count_30d
-                baseline = baseline_30d
-                lift = lift_30d
+            low_activity_baseline = _baseline_average(
+                group,
+                now,
+                recent_days=low_activity_window,
+                baseline_days=cfg.high_freq_low_activity_baseline_window_days,
+            )
+            low_activity_lift = low_activity_window_count / max(
+                low_activity_baseline, cfg.high_freq_baseline_floor
+            )
+            if (
+                low_activity_window_count >= cfg.high_freq_min_count
+                and low_activity_lift >= cfg.high_freq_lift
+            ):
+                selected_window = low_activity_window
+                recent_count = low_activity_window_count
+                baseline = low_activity_baseline
+                lift = low_activity_lift
 
-        if recent_count < cfg.high_freq_recent_count_7d or lift < cfg.high_freq_lift:
+        if recent_count < cfg.high_freq_min_count or lift < cfg.high_freq_lift:
             continue
         if recent_concentration < cfg.high_freq_recent_concentration:
             continue
@@ -683,7 +882,10 @@ def _build_recent_high_freq_tasks(
                 "recent_count": int(recent_count),
                 "baseline_count": round(float(baseline), 6),
                 "lift": round(float(lift), 6),
-                "trend_score": round(log1p(recent_count) * min(lift, 10.0), 6),
+                "trend_score": round(
+                    log1p(recent_count) * min(lift, cfg.high_freq_trend_lift_cap),
+                    6,
+                ),
                 "time_window": f"{selected_window}d",
             }
         )
@@ -949,15 +1151,18 @@ def _build_behavior_sequences(
             continue
         if confidence < min_confidence:
             continue
-        if global_user_ratio > 0.80 and confidence < 0.75:
+        if (
+            global_user_ratio > cfg.sequence_global_user_ratio_threshold
+            and confidence < cfg.sequence_global_min_confidence
+        ):
             continue
         age_days = max(
             (pd.Timestamp(now) - item.last_time).total_seconds()
             / 86400.0,
             0.0,
         )
-        length_weight = _sequence_length_weight(sequence_length)
-        recency_weight = exp(-age_days / 30.0)
+        length_weight = _sequence_length_weight(sequence_length, cfg)
+        recency_weight = exp(-age_days / cfg.sequence_recency_decay_days)
         sequence_score = (
             log1p(item.support_count)
             * confidence
@@ -996,12 +1201,12 @@ def _build_behavior_sequences(
     )
 
 
-def _sequence_length_weight(sequence_length: int) -> float:
+def _sequence_length_weight(sequence_length: int, cfg: ProfileConfig) -> float:
     if sequence_length == 2:
-        return 1.0
+        return cfg.sequence_pair_length_weight
     if sequence_length == 3:
-        return 1.2
-    return 1.3
+        return cfg.sequence_triple_length_weight
+    return cfg.sequence_long_length_weight
 
 
 def _filter_subsequences(sequences: pd.DataFrame, cfg: ProfileConfig) -> pd.DataFrame:
