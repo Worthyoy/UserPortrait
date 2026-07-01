@@ -372,3 +372,69 @@ def test_behavior_sequences_are_limited_to_top_k_per_user() -> None:
     sequences = profiles["personal_behavior_sequences"]
 
     assert len(sequences[sequences["user_id"] == "u1"]) == 3
+
+
+def test_pair_confidence_counts_single_event_sessions() -> None:
+    rows = []
+    for day in [1, 2, 3]:
+        base = datetime(2026, 3, day, 9, 0)
+        rows.extend(
+            [_row("u1", "A", base), _row("u1", "B", base + timedelta(minutes=5))]
+        )
+    rows.extend(
+        [
+            _row("u1", "A", datetime(2026, 3, 4, 9, 0)),
+            _row("u1", "A", datetime(2026, 3, 5, 9, 0)),
+            _row("noise1", "X", datetime(2026, 3, 1, 8, 0)),
+            _row("noise2", "Y", datetime(2026, 3, 1, 8, 0)),
+        ]
+    )
+
+    default_profiles = build_user_profiles(pd.DataFrame(rows), now=NOW)
+    assert "A -> B" not in default_profiles["personal_behavior_sequences"][
+        "sequence"
+    ].tolist()
+
+    relaxed_profiles = build_user_profiles(
+        pd.DataFrame(rows),
+        now=NOW,
+        config=ProfileConfig(min_pair_sequence_confidence=0.5),
+    )
+    pair = relaxed_profiles["personal_behavior_sequences"].query(
+        "user_id == 'u1' and sequence == 'A -> B'"
+    ).iloc[0]
+    assert pair["support_count"] == 3
+    assert pair["transition_confidence"] == 0.6
+
+
+def test_same_timestamp_actions_do_not_create_ordered_sequences() -> None:
+    rows = []
+    for day in [1, 2, 3]:
+        timestamp = datetime(2026, 3, day, 9, 0)
+        rows.extend([_row("u1", "B", timestamp), _row("u1", "A", timestamp)])
+
+    profiles = build_user_profiles(pd.DataFrame(rows), now=NOW)
+
+    assert profiles["personal_behavior_sequences"].empty
+
+
+def test_ambiguous_timestamp_splits_but_preserves_clear_sequence_segments() -> None:
+    rows = []
+    for day in [1, 2, 3]:
+        base = datetime(2026, 3, day, 9, 0)
+        rows.extend(
+            [
+                _row("u1", "X", base),
+                _row("u1", "Y", base + timedelta(minutes=5)),
+                _row("u1", "A", base + timedelta(minutes=10)),
+                _row("u1", "B", base + timedelta(minutes=10)),
+                _row("u1", "M", base + timedelta(minutes=15)),
+                _row("u1", "N", base + timedelta(minutes=20)),
+            ]
+        )
+
+    profiles = build_user_profiles(pd.DataFrame(rows), now=NOW)
+    sequences = set(profiles["personal_behavior_sequences"]["sequence"])
+
+    assert {"X -> Y", "M -> N"}.issubset(sequences)
+    assert not any("A" in sequence or "B" in sequence for sequence in sequences)

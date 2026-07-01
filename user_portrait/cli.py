@@ -11,7 +11,13 @@ from uuid import uuid4
 
 import pandas as pd
 
-from .profile_builder import ProfileConfig, build_user_profiles
+from .profile_builder import (
+    ProfileConfig,
+    _normalize_datetime_series,
+    _normalize_timestamp,
+    _resolve_business_timezone,
+    build_user_profiles,
+)
 
 
 def _load_config(path: str | None) -> ProfileConfig:
@@ -25,9 +31,13 @@ def _load_config(path: str | None) -> ProfileConfig:
 
 
 def _input_quality(
-    events: pd.DataFrame, reference_time: pd.Timestamp
+    events: pd.DataFrame,
+    reference_time: pd.Timestamp,
+    business_timezone,
 ) -> dict[str, int]:
-    parsed_time = pd.to_datetime(events["event_time"], errors="coerce")
+    parsed_time = _normalize_datetime_series(
+        events["event_time"], business_timezone
+    )
     valid_required = (
         events["user_id"].notna()
         & events["action_name"].notna()
@@ -95,9 +105,10 @@ def main() -> None:
     )
     config = _load_config(args.config)
     profiles = build_user_profiles(events, now=args.now, config=config)
-    parsed_time = pd.to_datetime(events["event_time"], errors="coerce")
+    business_timezone = _resolve_business_timezone(config.business_timezone)
+    parsed_time = _normalize_datetime_series(events["event_time"], business_timezone)
     reference_time = (
-        pd.Timestamp(args.now)
+        _normalize_timestamp(args.now, business_timezone)
         if args.now is not None
         else pd.Timestamp(parsed_time.max())
     )
@@ -110,7 +121,9 @@ def main() -> None:
         "finished_at_utc": datetime.now(timezone.utc).isoformat(),
         "elapsed_seconds": round(elapsed_seconds, 6),
         "config": asdict(config),
-        "input_quality": _input_quality(events, reference_time),
+        "input_quality": _input_quality(
+            events, reference_time, business_timezone
+        ),
         "output_row_counts": {name: int(len(frame)) for name, frame in profiles.items()},
     }
     _write_snapshot(

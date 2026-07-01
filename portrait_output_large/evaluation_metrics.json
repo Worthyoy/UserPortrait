@@ -1,6 +1,6 @@
 {
   "evaluation_schema_version": 1,
-  "generated_at_utc": "2026-07-01T02:47:29.286618+00:00",
+  "generated_at_utc": "2026-07-01T07:09:46.490914+00:00",
   "ground_truth_dir": "C:\\Users\\97233\\Desktop\\user_portrait\\sample_data_large",
   "profiles_dir": "C:\\Users\\97233\\Desktop\\user_portrait\\portrait_output_large",
   "dirty_profiles_dir": "C:\\Users\\97233\\Desktop\\user_portrait\\portrait_output_large_dirty",
@@ -356,15 +356,15 @@
     },
     "personal_behavior_sequences": {
       "sample_counts": {
-        "predicted": 1250,
+        "predicted": 1256,
         "positive_ground_truth": 1200,
         "matched_positive": 1199,
         "negative_ground_truth": 600,
-        "matched_negative": 0
+        "matched_negative": 2
       },
       "metrics": {
         "precision": {
-          "value": 0.9592,
+          "value": 0.9546178343949044,
           "threshold": null,
           "comparison": null,
           "gated": false,
@@ -378,7 +378,7 @@
           "status": "reported"
         },
         "negative_false_positive_rate": {
-          "value": 0.0,
+          "value": 0.0033333333333333335,
           "threshold": 0.05,
           "comparison": "<=",
           "gated": true,
@@ -386,7 +386,7 @@
         }
       },
       "sequence_length_distribution": {
-        "2": 320,
+        "2": 326,
         "3": 331,
         "4": 299,
         "5": 300
@@ -399,7 +399,7 @@
           "5": 1.0
         },
         "negative_false_positive_rate_by_type": {
-          "global_common": 0.0,
+          "global_common": 0.013333333333333334,
           "low_confidence": 0.0,
           "low_support": 0.0,
           "session_gap": 0.0

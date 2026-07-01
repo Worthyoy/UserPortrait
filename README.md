@@ -20,10 +20,14 @@ Generated portrait tables:
 
 Key rules:
 
+- Naive timestamps are interpreted in `Asia/Shanghai`; timezone-aware timestamps are
+  converted to that business timezone before all date and time-period calculations.
 - Users with no events in the latest 30 days are always classified as low activity.
 - Monthly anchors use the date nearest the observed median when concentration ties.
 - Sequence confidence is `full sequence count / all prefix count`, including prefixes
-  that end a session.
+  that end a session and single-event sessions containing only the prefix action.
+- Multiple actions for the same user at the same timestamp remain available to all
+  aggregate portraits but form an ambiguity boundary in sequence mining.
 - Recent high-frequency behavior keeps its existing 7/30-day rules unchanged.
 - Time-period behavior uses fixed buckets only: `early_morning` 00:00-06:00,
   `morning` 06:00-12:00, `afternoon` 12:00-18:00, and `evening` 18:00-24:00.
@@ -64,6 +68,7 @@ python -m user_portrait.cli events.csv output_profiles --now "2026-03-31 12:00:0
 
 ```json
 {
+  "business_timezone": "Asia/Shanghai",
   "activity_window_days": 30,
   "time_period_min_count": 4,
   "time_period_min_active_days": 3,

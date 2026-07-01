@@ -71,3 +71,32 @@ def test_cli_reads_string_ids_and_builds_manifest(monkeypatch) -> None:
         "time_period_tasks": 1,
     }
     assert captured["encoding"] == "utf-8-sig"
+
+
+def test_input_quality_normalizes_timezone_aware_events() -> None:
+    events = pd.DataFrame(
+        [
+            {
+                "user_id": "u1",
+                "action_name": "past",
+                "event_time": "2026-03-31T00:00:00Z",
+            },
+            {
+                "user_id": "u1",
+                "action_name": "future",
+                "event_time": "2026-03-31T05:00:00Z",
+            },
+        ]
+    )
+    timezone = cli._resolve_business_timezone("Asia/Shanghai")
+    reference_time = cli._normalize_timestamp("2026-03-31 12:00:00", timezone)
+
+    quality = cli._input_quality(events, reference_time, timezone)
+
+    assert quality == {
+        "input_row_count": 2,
+        "invalid_row_count": 0,
+        "future_event_count": 1,
+        "valid_event_count": 1,
+        "filtered_row_count": 1,
+    }

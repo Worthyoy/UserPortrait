@@ -2,10 +2,11 @@
   "profile_schema_version": 2,
   "input_csv": "C:\\Users\\97233\\Desktop\\user_portrait\\sample_data\\sample_events.csv",
   "reference_time": "2026-03-31T12:00:00",
-  "started_at_utc": "2026-07-01T01:18:25.829149+00:00",
-  "finished_at_utc": "2026-07-01T01:18:33.682139+00:00",
-  "elapsed_seconds": 7.851909,
+  "started_at_utc": "2026-07-01T07:02:37.521170+00:00",
+  "finished_at_utc": "2026-07-01T07:02:48.100334+00:00",
+  "elapsed_seconds": 10.578664,
   "config": {
+    "business_timezone": "Asia/Shanghai",
     "activity_window_days": 30,
     "high_active_days": 15,
     "high_active_percentile": 0.8,
@@ -64,6 +65,6 @@
     "recent_high_freq_tasks": 110,
     "frequent_tasks": 1192,
     "time_period_tasks": 478,
-    "personal_behavior_sequences": 161
+    "personal_behavior_sequences": 159
   }
 }

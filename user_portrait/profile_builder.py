@@ -6,6 +6,8 @@ from datetime import datetime
 from math import exp, log1p, sqrt
 from statistics import median
 from typing import Any
+import warnings
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 import pandas as pd
 
@@ -15,6 +17,7 @@ REQUIRED_COLUMNS = {"user_id", "action_name", "event_time"}
 
 @dataclass(frozen=True)
 class ProfileConfig:
+    business_timezone: str = "Asia/Shanghai"
     activity_window_days: int = 30
     high_active_days: int = 15
     high_active_percentile: float = 0.80
@@ -72,8 +75,9 @@ def build_user_profiles(
     """Build behavior portrait tables from user_id/action_name/event_time events."""
 
     cfg = config or ProfileConfig()
-    clean_events = _prepare_events(events)
-    reference_time = _resolve_now(clean_events, now)
+    business_timezone = _resolve_business_timezone(cfg.business_timezone)
+    clean_events = _prepare_events(events, business_timezone)
+    reference_time = _resolve_now(clean_events, now, business_timezone)
     clean_events = clean_events[clean_events["event_time"] <= reference_time].reset_index(
         drop=True
     )
@@ -103,14 +107,16 @@ def build_user_profiles(
     }
 
 
-def _prepare_events(events: pd.DataFrame) -> pd.DataFrame:
+def _prepare_events(events: pd.DataFrame, business_timezone: ZoneInfo) -> pd.DataFrame:
     missing = REQUIRED_COLUMNS - set(events.columns)
     if missing:
         missing_text = ", ".join(sorted(missing))
         raise ValueError(f"missing required columns: {missing_text}")
 
     df = events.loc[:, ["user_id", "action_name", "event_time"]].copy()
-    df["event_time"] = pd.to_datetime(df["event_time"], errors="coerce")
+    df["event_time"] = _normalize_datetime_series(
+        df["event_time"], business_timezone
+    )
     df = df.dropna(subset=["user_id", "action_name", "event_time"])
     df["user_id"] = df["user_id"].astype(str)
     df["action_name"] = df["action_name"].astype(str)
@@ -121,11 +127,69 @@ def _prepare_events(events: pd.DataFrame) -> pd.DataFrame:
 
 
 def _resolve_now(
-    events: pd.DataFrame, now: str | datetime | pd.Timestamp | None
+    events: pd.DataFrame,
+    now: str | datetime | pd.Timestamp | None,
+    business_timezone: ZoneInfo,
 ) -> pd.Timestamp:
     if now is None:
         return pd.Timestamp(events["event_time"].max())
-    return pd.Timestamp(now)
+    normalized = _normalize_timestamp(now, business_timezone)
+    if pd.isna(normalized):
+        raise ValueError(f"invalid profile reference time: {now!r}")
+    return normalized
+
+
+def _resolve_business_timezone(name: str) -> ZoneInfo:
+    try:
+        return ZoneInfo(name)
+    except (ZoneInfoNotFoundError, ValueError) as exc:
+        raise ValueError(f"invalid business timezone: {name!r}") from exc
+
+
+def _normalize_datetime_series(
+    values: pd.Series, business_timezone: ZoneInfo
+) -> pd.Series:
+    try:
+        with warnings.catch_warnings():
+            warnings.simplefilter("error", FutureWarning)
+            parsed = pd.to_datetime(values, errors="coerce", format="mixed")
+    except (FutureWarning, ValueError):
+        return values.map(
+            lambda value: _normalize_timestamp(value, business_timezone)
+        )
+    if isinstance(parsed.dtype, pd.DatetimeTZDtype):
+        return parsed.dt.tz_convert(business_timezone).dt.tz_localize(None)
+    if pd.api.types.is_datetime64_dtype(parsed.dtype):
+        return (
+            parsed.dt.tz_localize(
+                business_timezone, ambiguous="NaT", nonexistent="NaT"
+            )
+            .dt.tz_localize(None)
+        )
+    return values.map(
+        lambda value: _normalize_timestamp(value, business_timezone)
+    )
+
+
+def _normalize_timestamp(value: Any, business_timezone: ZoneInfo) -> pd.Timestamp:
+    if pd.isna(value):
+        return pd.NaT
+    try:
+        timestamp = pd.Timestamp(value)
+    except (TypeError, ValueError, OverflowError):
+        return pd.NaT
+    if pd.isna(timestamp):
+        return pd.NaT
+    if timestamp.tzinfo is None:
+        try:
+            localized = timestamp.tz_localize(
+                business_timezone, ambiguous="raise", nonexistent="raise"
+            )
+        except (TypeError, ValueError):
+            return pd.NaT
+    else:
+        localized = timestamp.tz_convert(business_timezone)
+    return localized.tz_localize(None)
 
 
 def _build_activity_levels(
@@ -970,7 +1034,22 @@ def _split_sessions(user_events: pd.DataFrame, gap_minutes: int) -> list[pd.Data
     sorted_events = user_events.sort_values("event_time").reset_index(drop=True)
     gaps = sorted_events["event_time"].diff() > pd.Timedelta(minutes=gap_minutes)
     session_id = gaps.cumsum()
-    return [session for _, session in sorted_events.groupby(session_id) if len(session) >= 2]
+    sessions: list[pd.DataFrame] = []
+    for _, session in sorted_events.groupby(session_id, sort=False):
+        ambiguous = session["event_time"].duplicated(keep=False)
+        if not ambiguous.any():
+            sessions.append(session)
+            continue
+        segment_id = ambiguous.cumsum()
+        unambiguous = session.loc[~ambiguous].copy()
+        if unambiguous.empty:
+            continue
+        unambiguous["_segment_id"] = segment_id.loc[~ambiguous]
+        sessions.extend(
+            segment.drop(columns="_segment_id")
+            for _, segment in unambiguous.groupby("_segment_id", sort=False)
+        )
+    return sessions
 
 
 def _empty_recent_tasks() -> pd.DataFrame:

@@ -3,6 +3,7 @@ from __future__ import annotations
 from datetime import datetime, timedelta
 
 import pandas as pd
+import pytest
 
 from user_portrait import ProfileConfig, build_user_profiles
 
@@ -289,3 +290,48 @@ def test_users_without_recent_events_are_not_classified_as_high_activity() -> No
 
     assert (inactive["event_count_30d"] == 0).all()
     assert set(inactive["user_activity_level"]) == {"low"}
+
+
+def test_mixed_timezone_inputs_are_normalized_to_shanghai_business_time() -> None:
+    events = pd.DataFrame(
+        [
+            _row("naive", "check", "2026-03-31 08:00:00"),
+            _row("offset", "check", "2026-03-31T08:00:00+08:00"),
+            _row("utc", "check", "2026-03-31T00:00:00Z"),
+        ]
+    )
+
+    profiles = build_user_profiles(events, now="2026-03-31T12:00:00+08:00")
+
+    assert set(profiles["recent_tasks"]["event_time"]) == {
+        pd.Timestamp("2026-03-31 08:00:00")
+    }
+
+
+def test_timezone_normalization_drives_future_filter_and_time_period_bucket() -> None:
+    rows = [
+        _row("u1", "morning_action", f"2026-03-{day:02d}T00:00:00Z")
+        for day in [1, 8, 17, 29]
+    ]
+    rows.append(_row("u1", "future", "2026-03-31T05:00:00Z"))
+
+    profiles = build_user_profiles(
+        pd.DataFrame(rows), now="2026-03-31 12:00:00"
+    )
+    time_period = profiles["time_period_tasks"]
+
+    assert "future" not in profiles["recent_tasks"]["action_name"].tolist()
+    task = time_period[time_period["action_name"] == "morning_action"].iloc[0]
+    assert task["time_period"] == "morning"
+    assert task["first_time"].hour == 8
+
+
+def test_invalid_business_timezone_is_rejected() -> None:
+    events = pd.DataFrame([_row("u1", "check", "2026-03-31 08:00:00")])
+
+    with pytest.raises(ValueError, match="invalid business timezone"):
+        build_user_profiles(
+            events,
+            now="2026-03-31 12:00:00",
+            config=ProfileConfig(business_timezone="Invalid/Timezone"),
+        )

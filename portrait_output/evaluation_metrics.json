@@ -1,8 +1,12 @@
 {
   "evaluation_schema_version": 1,
-  "generated_at_utc": "2026-07-01T01:35:19.832059+00:00",
+  "generated_at_utc": "2026-07-01T07:03:14.618666+00:00",
   "ground_truth_dir": "C:\\Users\\97233\\Desktop\\user_portrait\\sample_data",
   "profiles_dir": "C:\\Users\\97233\\Desktop\\user_portrait\\portrait_output",
+  "dirty_profiles_dir": null,
+  "dataset_manifest": {
+    "time_period_ground_truth_scope": "injected_only"
+  },
   "synthetic_regression_only": true,
   "modules": {
     "activity_levels": {
@@ -131,6 +135,25 @@
           "gated": false,
           "status": "reported"
         }
+      },
+      "breakdowns": {
+        "recall_by_period_type": {
+          "daily": 1.0,
+          "interval": 0.6,
+          "monthly": 0.625,
+          "weekly": 0.8541666666666666
+        },
+        "recall_by_pattern_strength": {
+          "strong": 0.8111111111111111,
+          "weak": 0.86
+        },
+        "negative_false_positive_rate_by_type": {
+          "frequent_without_stable_interval": 0.0,
+          "irregular_interval": 0.0,
+          "only_two_occurrences": 0.027777777777777776,
+          "short_burst": 0.0,
+          "single_natural_cycle": 0.027777777777777776
+        }
       }
     },
     "recent_high_freq_tasks": {
@@ -162,6 +185,14 @@
           "comparison": "<=",
           "gated": true,
           "status": "pass"
+        }
+      },
+      "breakdowns": {
+        "negative_false_positive_rate_by_type": {
+          "already_periodic": 0.0,
+          "long_term_high_frequency": 0.0,
+          "low_count_high_lift": 0.0,
+          "low_recent_concentration": 0.0
         }
       }
     },
@@ -196,24 +227,38 @@
           "gated": true,
           "status": "pass"
         }
+      },
+      "ground_truth_scope": "injected_only",
+      "breakdowns": {
+        "recall_by_time_period": {
+          "afternoon": 0.95,
+          "early_morning": 1.0,
+          "evening": 0.9,
+          "morning": 0.95
+        },
+        "negative_false_positive_rate_by_type": {
+          "low_active_days": 0.0,
+          "low_count": 0.0,
+          "low_share": 0.0
+        }
       }
     },
     "personal_behavior_sequences": {
       "sample_counts": {
-        "predicted": 161,
+        "predicted": 159,
         "positive_ground_truth": 160,
-        "matched_positive": 147
+        "matched_positive": 146
       },
       "metrics": {
         "precision": {
-          "value": 0.9130434782608695,
+          "value": 0.9182389937106918,
           "threshold": null,
           "comparison": null,
           "gated": false,
           "status": "reported"
         },
         "recall": {
-          "value": 0.91875,
+          "value": 0.9125,
           "threshold": null,
           "comparison": null,
           "gated": false,
@@ -221,10 +266,18 @@
         }
       },
       "sequence_length_distribution": {
-        "2": 20,
-        "3": 93,
+        "2": 19,
+        "3": 92,
         "4": 32,
         "5": 16
+      },
+      "breakdowns": {
+        "recall_by_sequence_length": {
+          "2": 0.5625,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0
+        }
       }
     }
   },
