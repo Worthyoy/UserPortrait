@@ -1,0 +1,440 @@
+{
+  "evaluation_schema_version": 1,
+  "generated_at_utc": "2026-07-01T02:47:29.286618+00:00",
+  "ground_truth_dir": "C:\\Users\\97233\\Desktop\\user_portrait\\sample_data_large",
+  "profiles_dir": "C:\\Users\\97233\\Desktop\\user_portrait\\portrait_output_large",
+  "dirty_profiles_dir": "C:\\Users\\97233\\Desktop\\user_portrait\\portrait_output_large_dirty",
+  "dataset_manifest": {
+    "dataset_schema_version": 2,
+    "profile": "large",
+    "seed": 20260701,
+    "reference_time": "2026-06-30 12:00:00",
+    "history_days": 365,
+    "user_count": 2000,
+    "clean_event_count": 175902,
+    "dirty_event_count": 176002,
+    "time_period_ground_truth_scope": "exhaustive",
+    "cohort_counts": {
+      "high": 500,
+      "middle": 650,
+      "low": 600,
+      "noise": 250
+    },
+    "pattern_counts": {
+      "periodic_positive": 1000,
+      "periodic_negative": 800,
+      "high_freq_positive": 800,
+      "high_freq_negative": 800,
+      "time_period_injected": 1000,
+      "time_period_exhaustive": 4963,
+      "time_period_negative": 800,
+      "sequence_positive": 1200,
+      "sequence_negative": 600
+    },
+    "overlap_users": {
+      "at_least_two_modules": 1200,
+      "at_least_three_modules": 800
+    },
+    "dirty_input_expected": {
+      "future_event_count": 50,
+      "invalid_row_count": 50,
+      "filtered_row_count": 100
+    },
+    "file_row_counts": {
+      "sample_events": 175902,
+      "sample_events_dirty": 176002,
+      "sample_ground_truth_recent": 6000,
+      "sample_ground_truth_frequent": 10000,
+      "sample_ground_truth_periodic": 1000,
+      "sample_ground_truth_periodic_negative": 800,
+      "sample_ground_truth_high_freq": 800,
+      "sample_ground_truth_high_freq_negative": 800,
+      "sample_ground_truth_time_period": 4963,
+      "sample_injected_time_period_patterns": 1000,
+      "sample_ground_truth_time_period_negative": 800,
+      "sample_ground_truth_sequences": 1200,
+      "sample_ground_truth_sequences_negative": 600
+    }
+  },
+  "synthetic_regression_only": true,
+  "modules": {
+    "activity_levels": {
+      "sample_counts": {
+        "expected_users": 2000,
+        "predicted_users": 2000
+      },
+      "metrics": {
+        "classification_accuracy": {
+          "value": 1.0,
+          "threshold": null,
+          "comparison": null,
+          "gated": false,
+          "status": "reported"
+        }
+      }
+    },
+    "recent_tasks": {
+      "sample_counts": {
+        "predicted": 6000,
+        "positive_ground_truth": 6000,
+        "matched_positive": 6000
+      },
+      "metrics": {
+        "precision": {
+          "value": 1.0,
+          "threshold": null,
+          "comparison": null,
+          "gated": false,
+          "status": "reported"
+        },
+        "recall": {
+          "value": 1.0,
+          "threshold": null,
+          "comparison": null,
+          "gated": false,
+          "status": "reported"
+        },
+        "rank_accuracy": {
+          "value": 1.0,
+          "threshold": null,
+          "comparison": null,
+          "gated": false,
+          "status": "reported"
+        }
+      }
+    },
+    "frequent_tasks": {
+      "sample_counts": {
+        "predicted": 10000,
+        "positive_ground_truth": 10000,
+        "matched_positive": 10000
+      },
+      "metrics": {
+        "precision": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "recall": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "event_count_accuracy": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "active_days_accuracy": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "rank_accuracy": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        }
+      }
+    },
+    "periodic_tasks": {
+      "sample_counts": {
+        "predicted": 1132,
+        "positive_ground_truth": 1000,
+        "matched_positive": 938,
+        "negative_ground_truth": 800,
+        "matched_negative": 0
+      },
+      "metrics": {
+        "precision": {
+          "value": 0.8286219081272085,
+          "threshold": 0.75,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "recall": {
+          "value": 0.938,
+          "threshold": 0.8,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "negative_false_positive_rate": {
+          "value": 0.0,
+          "threshold": 0.02,
+          "comparison": "<=",
+          "gated": true,
+          "status": "pass"
+        },
+        "next_expected_time_accuracy": {
+          "value": 0.9104477611940298,
+          "threshold": null,
+          "comparison": null,
+          "gated": false,
+          "status": "reported"
+        }
+      },
+      "breakdowns": {
+        "recall_by_period_type": {
+          "daily": 1.0,
+          "interval": 1.0,
+          "monthly": 0.752,
+          "weekly": 1.0
+        },
+        "recall_by_pattern_strength": {
+          "strong": 1.0,
+          "weak": 0.876
+        },
+        "negative_false_positive_rate_by_type": {
+          "random_intervals": 0.0,
+          "short_burst": 0.0,
+          "single_cycle": 0.0,
+          "stale_periodic": 0.0,
+          "two_occurrences": 0.0
+        }
+      }
+    },
+    "recent_high_freq_tasks": {
+      "sample_counts": {
+        "predicted": 816,
+        "positive_ground_truth": 800,
+        "matched_positive": 800,
+        "negative_ground_truth": 800,
+        "matched_negative": 0
+      },
+      "metrics": {
+        "precision": {
+          "value": 0.9803921568627451,
+          "threshold": 0.8,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "recall": {
+          "value": 1.0,
+          "threshold": 0.85,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "negative_false_positive_rate": {
+          "value": 0.0,
+          "threshold": 0.15,
+          "comparison": "<=",
+          "gated": true,
+          "status": "pass"
+        }
+      },
+      "breakdowns": {
+        "negative_false_positive_rate_by_type": {
+          "long_term_high_freq": 0.0,
+          "low_concentration": 0.0,
+          "low_count": 0.0,
+          "low_lift": 0.0
+        }
+      }
+    },
+    "time_period_tasks": {
+      "sample_counts": {
+        "predicted": 4963,
+        "positive_ground_truth": 4963,
+        "matched_positive": 4963,
+        "negative_ground_truth": 800,
+        "matched_negative": 0
+      },
+      "metrics": {
+        "precision": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "recall": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "negative_false_positive_rate": {
+          "value": 0.0,
+          "threshold": 0.15,
+          "comparison": "<=",
+          "gated": true,
+          "status": "pass"
+        },
+        "period_event_count_accuracy": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "total_event_count_accuracy": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "period_share_accuracy": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "active_days_accuracy": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "first_time_accuracy": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "last_time_accuracy": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "time_period_score_accuracy": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "rank_accuracy": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "injected_pattern_recall": {
+          "value": 0.925,
+          "threshold": 0.85,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        }
+      },
+      "ground_truth_scope": "exhaustive",
+      "breakdowns": {
+        "recall_by_time_period": {
+          "afternoon": 1.0,
+          "early_morning": 1.0,
+          "evening": 1.0,
+          "morning": 1.0
+        },
+        "negative_false_positive_rate_by_type": {
+          "low_active_days": 0.0,
+          "low_count": 0.0,
+          "low_share": 0.0
+        }
+      }
+    },
+    "personal_behavior_sequences": {
+      "sample_counts": {
+        "predicted": 1250,
+        "positive_ground_truth": 1200,
+        "matched_positive": 1199,
+        "negative_ground_truth": 600,
+        "matched_negative": 0
+      },
+      "metrics": {
+        "precision": {
+          "value": 0.9592,
+          "threshold": null,
+          "comparison": null,
+          "gated": false,
+          "status": "reported"
+        },
+        "recall": {
+          "value": 0.9991666666666666,
+          "threshold": null,
+          "comparison": null,
+          "gated": false,
+          "status": "reported"
+        },
+        "negative_false_positive_rate": {
+          "value": 0.0,
+          "threshold": 0.05,
+          "comparison": "<=",
+          "gated": true,
+          "status": "pass"
+        }
+      },
+      "sequence_length_distribution": {
+        "2": 320,
+        "3": 331,
+        "4": 299,
+        "5": 300
+      },
+      "breakdowns": {
+        "recall_by_sequence_length": {
+          "2": 1.0,
+          "3": 1.0,
+          "4": 0.9966666666666667,
+          "5": 1.0
+        },
+        "negative_false_positive_rate_by_type": {
+          "global_common": 0.0,
+          "low_confidence": 0.0,
+          "low_support": 0.0,
+          "session_gap": 0.0
+        }
+      }
+    },
+    "dirty_input_consistency": {
+      "sample_counts": {
+        "compared_tables": 7,
+        "matched_tables": 7
+      },
+      "metrics": {
+        "table_match_rate": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        }
+      },
+      "table_matches": {
+        "activity_levels.csv": true,
+        "recent_tasks.csv": true,
+        "periodic_tasks.csv": true,
+        "recent_high_freq_tasks.csv": true,
+        "frequent_tasks.csv": true,
+        "time_period_tasks.csv": true,
+        "personal_behavior_sequences.csv": true
+      }
+    }
+  },
+  "summary": {
+    "module_count": 8,
+    "gated_metric_count": 25,
+    "failed_metric_count": 0
+  },
+  "overall_pass": true
+}

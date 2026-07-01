@@ -1,0 +1,1001 @@
+﻿user_id,action_name,period_type,period_value,next_expected_time,positive_label,pattern_id,pattern_strength,jitter_days,missing_occurrence_count
+user_001605,大样本周期_daily_0000,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0000,strong,0,0
+user_000552,大样本周期_weekly_0001,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0001,strong,0,0
+user_001444,大样本周期_monthly_0002,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0002,strong,0,0
+user_000971,大样本周期_interval_0003,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0003,strong,0,0
+user_001757,大样本周期_daily_0004,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0004,weak,0,1
+user_000683,大样本周期_weekly_0005,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0005,weak,1,1
+user_001707,大样本周期_monthly_0006,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0006,weak,1,1
+user_000580,大样本周期_interval_0007,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0007,weak,0,0
+user_000747,大样本周期_daily_0008,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0008,strong,0,0
+user_001529,大样本周期_weekly_0009,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0009,strong,0,0
+user_000062,大样本周期_monthly_0010,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0010,strong,0,0
+user_000197,大样本周期_interval_0011,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0011,strong,0,0
+user_000248,大样本周期_daily_0012,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0012,weak,0,1
+user_001337,大样本周期_weekly_0013,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0013,weak,1,1
+user_000948,大样本周期_monthly_0014,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0014,weak,1,1
+user_000150,大样本周期_interval_0015,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0015,weak,0,0
+user_001702,大样本周期_daily_0016,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0016,strong,0,0
+user_001269,大样本周期_weekly_0017,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0017,strong,0,0
+user_001170,大样本周期_monthly_0018,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0018,strong,0,0
+user_001876,大样本周期_interval_0019,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0019,strong,0,0
+user_000350,大样本周期_daily_0020,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0020,weak,0,1
+user_000039,大样本周期_weekly_0021,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0021,weak,1,1
+user_001342,大样本周期_monthly_0022,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0022,weak,1,1
+user_001869,大样本周期_interval_0023,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0023,weak,0,0
+user_001837,大样本周期_daily_0024,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0024,strong,0,0
+user_001818,大样本周期_weekly_0025,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0025,strong,0,0
+user_000054,大样本周期_monthly_0026,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0026,strong,0,0
+user_001386,大样本周期_interval_0027,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0027,strong,0,0
+user_000994,大样本周期_daily_0028,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0028,weak,0,1
+user_001105,大样本周期_weekly_0029,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0029,weak,1,1
+user_000034,大样本周期_monthly_0030,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0030,weak,1,1
+user_000491,大样本周期_interval_0031,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0031,weak,0,0
+user_000760,大样本周期_daily_0032,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0032,strong,0,0
+user_000147,大样本周期_weekly_0033,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0033,strong,0,0
+user_000724,大样本周期_monthly_0034,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0034,strong,0,0
+user_000548,大样本周期_interval_0035,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0035,strong,0,0
+user_000043,大样本周期_daily_0036,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0036,weak,0,1
+user_000740,大样本周期_weekly_0037,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0037,weak,1,1
+user_001979,大样本周期_monthly_0038,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0038,weak,1,1
+user_000167,大样本周期_interval_0039,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0039,weak,0,0
+user_000288,大样本周期_daily_0040,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0040,strong,0,0
+user_000669,大样本周期_weekly_0041,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0041,strong,0,0
+user_000269,大样本周期_monthly_0042,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0042,strong,0,0
+user_000675,大样本周期_interval_0043,interval,every 13 days,2026-07-12 18:00:00,1,large_periodic_0043,strong,0,0
+user_000418,大样本周期_daily_0044,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0044,weak,0,1
+user_000049,大样本周期_weekly_0045,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0045,weak,1,1
+user_001079,大样本周期_monthly_0046,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0046,weak,1,1
+user_000873,大样本周期_interval_0047,interval,every 17 days,2026-07-15 18:00:00,1,large_periodic_0047,weak,0,0
+user_000002,大样本周期_daily_0048,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0048,strong,0,0
+user_000716,大样本周期_weekly_0049,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0049,strong,0,0
+user_001094,大样本周期_monthly_0050,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0050,strong,0,0
+user_001469,大样本周期_interval_0051,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0051,strong,0,0
+user_001139,大样本周期_daily_0052,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0052,weak,0,1
+user_000914,大样本周期_weekly_0053,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0053,weak,1,1
+user_000438,大样本周期_monthly_0054,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0054,weak,1,1
+user_001631,大样本周期_interval_0055,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0055,weak,0,0
+user_001854,大样本周期_daily_0056,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0056,strong,0,0
+user_000334,大样本周期_weekly_0057,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0057,strong,0,0
+user_000287,大样本周期_monthly_0058,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0058,strong,0,0
+user_000905,大样本周期_interval_0059,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0059,strong,0,0
+user_001163,大样本周期_daily_0060,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0060,weak,0,1
+user_001441,大样本周期_weekly_0061,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0061,weak,1,1
+user_001952,大样本周期_monthly_0062,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0062,weak,1,1
+user_000964,大样本周期_interval_0063,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0063,weak,0,0
+user_000761,大样本周期_daily_0064,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0064,strong,0,0
+user_000870,大样本周期_weekly_0065,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0065,strong,0,0
+user_001649,大样本周期_monthly_0066,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0066,strong,0,0
+user_000172,大样本周期_interval_0067,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0067,strong,0,0
+user_001508,大样本周期_daily_0068,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0068,weak,0,1
+user_001121,大样本周期_weekly_0069,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0069,weak,1,1
+user_001591,大样本周期_monthly_0070,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0070,weak,1,1
+user_001037,大样本周期_interval_0071,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0071,weak,0,0
+user_000359,大样本周期_daily_0072,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0072,strong,0,0
+user_001174,大样本周期_weekly_0073,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0073,strong,0,0
+user_001048,大样本周期_monthly_0074,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0074,strong,0,0
+user_000224,大样本周期_interval_0075,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0075,strong,0,0
+user_000215,大样本周期_daily_0076,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0076,weak,0,1
+user_000723,大样本周期_weekly_0077,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0077,weak,1,1
+user_001457,大样本周期_monthly_0078,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0078,weak,1,1
+user_001061,大样本周期_interval_0079,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0079,weak,0,0
+user_001938,大样本周期_daily_0080,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0080,strong,0,0
+user_001057,大样本周期_weekly_0081,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0081,strong,0,0
+user_000931,大样本周期_monthly_0082,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0082,strong,0,0
+user_001796,大样本周期_interval_0083,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0083,strong,0,0
+user_000214,大样本周期_daily_0084,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0084,weak,0,1
+user_000815,大样本周期_weekly_0085,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0085,weak,1,1
+user_000910,大样本周期_monthly_0086,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0086,weak,1,1
+user_001858,大样本周期_interval_0087,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0087,weak,0,0
+user_000225,大样本周期_daily_0088,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0088,strong,0,0
+user_001543,大样本周期_weekly_0089,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0089,strong,0,0
+user_001989,大样本周期_monthly_0090,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0090,strong,0,0
+user_000650,大样本周期_interval_0091,interval,every 13 days,2026-07-12 18:00:00,1,large_periodic_0091,strong,0,0
+user_001847,大样本周期_daily_0092,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0092,weak,0,1
+user_000124,大样本周期_weekly_0093,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0093,weak,1,1
+user_000136,大样本周期_monthly_0094,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0094,weak,1,1
+user_001963,大样本周期_interval_0095,interval,every 17 days,2026-07-15 18:00:00,1,large_periodic_0095,weak,0,0
+user_000240,大样本周期_daily_0096,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0096,strong,0,0
+user_000827,大样本周期_weekly_0097,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0097,strong,0,0
+user_001319,大样本周期_monthly_0098,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0098,strong,0,0
+user_001097,大样本周期_interval_0099,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0099,strong,0,0
+user_001340,大样本周期_daily_0100,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0100,weak,0,1
+user_001528,大样本周期_weekly_0101,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0101,weak,1,1
+user_000404,大样本周期_monthly_0102,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0102,weak,1,1
+user_000433,大样本周期_interval_0103,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0103,weak,0,0
+user_000063,大样本周期_daily_0104,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0104,strong,0,0
+user_001288,大样本周期_weekly_0105,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0105,strong,0,0
+user_000229,大样本周期_monthly_0106,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0106,strong,0,0
+user_000352,大样本周期_interval_0107,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0107,strong,0,0
+user_000520,大样本周期_daily_0108,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0108,weak,0,1
+user_000355,大样本周期_weekly_0109,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0109,weak,1,1
+user_001014,大样本周期_monthly_0110,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0110,weak,1,1
+user_000292,大样本周期_interval_0111,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0111,weak,0,0
+user_001083,大样本周期_daily_0112,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0112,strong,0,0
+user_001987,大样本周期_weekly_0113,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0113,strong,0,0
+user_001008,大样本周期_monthly_0114,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0114,strong,0,0
+user_001034,大样本周期_interval_0115,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0115,strong,0,0
+user_001642,大样本周期_daily_0116,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0116,weak,0,1
+user_001691,大样本周期_weekly_0117,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0117,weak,1,1
+user_001519,大样本周期_monthly_0118,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0118,weak,1,1
+user_001439,大样本周期_interval_0119,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0119,weak,0,0
+user_000900,大样本周期_daily_0120,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0120,strong,0,0
+user_000286,大样本周期_weekly_0121,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0121,strong,0,0
+user_000506,大样本周期_monthly_0122,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0122,strong,0,0
+user_001148,大样本周期_interval_0123,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0123,strong,0,0
+user_000662,大样本周期_daily_0124,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0124,weak,0,1
+user_001123,大样本周期_weekly_0125,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0125,weak,1,1
+user_001363,大样本周期_monthly_0126,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0126,weak,1,1
+user_000064,大样本周期_interval_0127,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0127,weak,0,0
+user_000752,大样本周期_daily_0128,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0128,strong,0,0
+user_000542,大样本周期_weekly_0129,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0129,strong,0,0
+user_000689,大样本周期_monthly_0130,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0130,strong,0,0
+user_001199,大样本周期_interval_0131,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0131,strong,0,0
+user_000930,大样本周期_daily_0132,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0132,weak,0,1
+user_000518,大样本周期_weekly_0133,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0133,weak,1,1
+user_000227,大样本周期_monthly_0134,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0134,weak,1,1
+user_000469,大样本周期_interval_0135,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0135,weak,0,0
+user_001312,大样本周期_daily_0136,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0136,strong,0,0
+user_001826,大样本周期_weekly_0137,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0137,strong,0,0
+user_001744,大样本周期_monthly_0138,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0138,strong,0,0
+user_001554,大样本周期_interval_0139,interval,every 13 days,2026-07-12 18:00:00,1,large_periodic_0139,strong,0,0
+user_001525,大样本周期_daily_0140,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0140,weak,0,1
+user_000755,大样本周期_weekly_0141,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0141,weak,1,1
+user_000706,大样本周期_monthly_0142,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0142,weak,1,1
+user_000479,大样本周期_interval_0143,interval,every 17 days,2026-07-15 18:00:00,1,large_periodic_0143,weak,0,0
+user_001006,大样本周期_daily_0144,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0144,strong,0,0
+user_001463,大样本周期_weekly_0145,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0145,strong,0,0
+user_000887,大样本周期_monthly_0146,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0146,strong,0,0
+user_001998,大样本周期_interval_0147,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0147,strong,0,0
+user_001530,大样本周期_daily_0148,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0148,weak,0,1
+user_001768,大样本周期_weekly_0149,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0149,weak,1,1
+user_000813,大样本周期_monthly_0150,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0150,weak,1,1
+user_000765,大样本周期_interval_0151,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0151,weak,0,0
+user_000682,大样本周期_daily_0152,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0152,strong,0,0
+user_000727,大样本周期_weekly_0153,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0153,strong,0,0
+user_001556,大样本周期_monthly_0154,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0154,strong,0,0
+user_001811,大样本周期_interval_0155,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0155,strong,0,0
+user_000489,大样本周期_daily_0156,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0156,weak,0,1
+user_001111,大样本周期_weekly_0157,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0157,weak,1,1
+user_000282,大样本周期_monthly_0158,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0158,weak,1,1
+user_001283,大样本周期_interval_0159,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0159,weak,0,0
+user_001344,大样本周期_daily_0160,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0160,strong,0,0
+user_001252,大样本周期_weekly_0161,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0161,strong,0,0
+user_001877,大样本周期_monthly_0162,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0162,strong,0,0
+user_000527,大样本周期_interval_0163,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0163,strong,0,0
+user_000025,大样本周期_daily_0164,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0164,weak,0,1
+user_000926,大样本周期_weekly_0165,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0165,weak,1,1
+user_001035,大样本周期_monthly_0166,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0166,weak,1,1
+user_000201,大样本周期_interval_0167,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0167,weak,0,0
+user_000314,大样本周期_daily_0168,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0168,strong,0,0
+user_001977,大样本周期_weekly_0169,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0169,strong,0,0
+user_001651,大样本周期_monthly_0170,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0170,strong,0,0
+user_000753,大样本周期_interval_0171,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0171,strong,0,0
+user_001658,大样本周期_daily_0172,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0172,weak,0,1
+user_000459,大样本周期_weekly_0173,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0173,weak,1,1
+user_001664,大样本周期_monthly_0174,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0174,weak,1,1
+user_001497,大样本周期_interval_0175,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0175,weak,0,0
+user_000273,大样本周期_daily_0176,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0176,strong,0,0
+user_000104,大样本周期_weekly_0177,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0177,strong,0,0
+user_001498,大样本周期_monthly_0178,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0178,strong,0,0
+user_000978,大样本周期_interval_0179,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0179,strong,0,0
+user_001009,大样本周期_daily_0180,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0180,weak,0,1
+user_000360,大样本周期_weekly_0181,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0181,weak,1,1
+user_000474,大样本周期_monthly_0182,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0182,weak,1,1
+user_001461,大样本周期_interval_0183,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0183,weak,0,0
+user_000661,大样本周期_daily_0184,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0184,strong,0,0
+user_000789,大样本周期_weekly_0185,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0185,strong,0,0
+user_000775,大样本周期_monthly_0186,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0186,strong,0,0
+user_000394,大样本周期_interval_0187,interval,every 13 days,2026-07-12 18:00:00,1,large_periodic_0187,strong,0,0
+user_001761,大样本周期_daily_0188,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0188,weak,0,1
+user_001062,大样本周期_weekly_0189,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0189,weak,1,1
+user_000395,大样本周期_monthly_0190,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0190,weak,1,1
+user_001318,大样本周期_interval_0191,interval,every 17 days,2026-07-15 18:00:00,1,large_periodic_0191,weak,0,0
+user_000129,大样本周期_daily_0192,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0192,strong,0,0
+user_000493,大样本周期_weekly_0193,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0193,strong,0,0
+user_000762,大样本周期_monthly_0194,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0194,strong,0,0
+user_000077,大样本周期_interval_0195,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0195,strong,0,0
+user_001726,大样本周期_daily_0196,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0196,weak,0,1
+user_001449,大样本周期_weekly_0197,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0197,weak,1,1
+user_000537,大样本周期_monthly_0198,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0198,weak,1,1
+user_000266,大样本周期_interval_0199,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0199,weak,0,0
+user_000663,大样本周期_daily_0200,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0200,strong,0,0
+user_000977,大样本周期_weekly_0201,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0201,strong,0,0
+user_001950,大样本周期_monthly_0202,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0202,strong,0,0
+user_000524,大样本周期_interval_0203,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0203,strong,0,0
+user_000592,大样本周期_daily_0204,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0204,weak,0,1
+user_001375,大样本周期_weekly_0205,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0205,weak,1,1
+user_001446,大样本周期_monthly_0206,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0206,weak,1,1
+user_001412,大样本周期_interval_0207,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0207,weak,0,0
+user_001142,大样本周期_daily_0208,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0208,strong,0,0
+user_001606,大样本周期_weekly_0209,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0209,strong,0,0
+user_000163,大样本周期_monthly_0210,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0210,strong,0,0
+user_001903,大样本周期_interval_0211,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0211,strong,0,0
+user_001601,大样本周期_daily_0212,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0212,weak,0,1
+user_000658,大样本周期_weekly_0213,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0213,weak,1,1
+user_001960,大样本周期_monthly_0214,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0214,weak,1,1
+user_001488,大样本周期_interval_0215,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0215,weak,0,0
+user_000921,大样本周期_daily_0216,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0216,strong,0,0
+user_001999,大样本周期_weekly_0217,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0217,strong,0,0
+user_001031,大样本周期_monthly_0218,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0218,strong,0,0
+user_001195,大样本周期_interval_0219,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0219,strong,0,0
+user_000466,大样本周期_daily_0220,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0220,weak,0,1
+user_001505,大样本周期_weekly_0221,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0221,weak,1,1
+user_000796,大样本周期_monthly_0222,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0222,weak,1,1
+user_001219,大样本周期_interval_0223,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0223,weak,0,0
+user_001533,大样本周期_daily_0224,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0224,strong,0,0
+user_000526,大样本周期_weekly_0225,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0225,strong,0,0
+user_000328,大样本周期_monthly_0226,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0226,strong,0,0
+user_000641,大样本周期_interval_0227,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0227,strong,0,0
+user_001545,大样本周期_daily_0228,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0228,weak,0,1
+user_001534,大样本周期_weekly_0229,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0229,weak,1,1
+user_000995,大样本周期_monthly_0230,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0230,weak,1,1
+user_001247,大样本周期_interval_0231,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0231,weak,0,0
+user_001849,大样本周期_daily_0232,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0232,strong,0,0
+user_001791,大样本周期_weekly_0233,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0233,strong,0,0
+user_000283,大样本周期_monthly_0234,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0234,strong,0,0
+user_000274,大样本周期_interval_0235,interval,every 13 days,2026-07-12 18:00:00,1,large_periodic_0235,strong,0,0
+user_001915,大样本周期_daily_0236,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0236,weak,0,1
+user_000707,大样本周期_weekly_0237,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0237,weak,1,1
+user_001090,大样本周期_monthly_0238,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0238,weak,1,1
+user_000122,大样本周期_interval_0239,interval,every 17 days,2026-07-15 18:00:00,1,large_periodic_0239,weak,0,0
+user_001935,大样本周期_daily_0240,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0240,strong,0,0
+user_000805,大样本周期_weekly_0241,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0241,strong,0,0
+user_001745,大样本周期_monthly_0242,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0242,strong,0,0
+user_001481,大样本周期_interval_0243,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0243,strong,0,0
+user_000507,大样本周期_daily_0244,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0244,weak,0,1
+user_000872,大样本周期_weekly_0245,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0245,weak,1,1
+user_001532,大样本周期_monthly_0246,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0246,weak,1,1
+user_001299,大样本周期_interval_0247,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0247,weak,0,0
+user_000766,大样本周期_daily_0248,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0248,strong,0,0
+user_000961,大样本周期_weekly_0249,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0249,strong,0,0
+user_000792,大样本周期_monthly_0250,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0250,strong,0,0
+user_001012,大样本周期_interval_0251,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0251,strong,0,0
+user_001095,大样本周期_daily_0252,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0252,weak,0,1
+user_001168,大样本周期_weekly_0253,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0253,weak,1,1
+user_000069,大样本周期_monthly_0254,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0254,weak,1,1
+user_001309,大样本周期_interval_0255,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0255,weak,0,0
+user_000237,大样本周期_daily_0256,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0256,strong,0,0
+user_001141,大样本周期_weekly_0257,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0257,strong,0,0
+user_000664,大样本周期_monthly_0258,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0258,strong,0,0
+user_001643,大样本周期_interval_0259,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0259,strong,0,0
+user_001576,大样本周期_daily_0260,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0260,weak,0,1
+user_000828,大样本周期_weekly_0261,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0261,weak,1,1
+user_001423,大样本周期_monthly_0262,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0262,weak,1,1
+user_000631,大样本周期_interval_0263,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0263,weak,0,0
+user_001897,大样本周期_daily_0264,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0264,strong,0,0
+user_001313,大样本周期_weekly_0265,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0265,strong,0,0
+user_000851,大样本周期_monthly_0266,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0266,strong,0,0
+user_001203,大样本周期_interval_0267,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0267,strong,0,0
+user_000786,大样本周期_daily_0268,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0268,weak,0,1
+user_000366,大样本周期_weekly_0269,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0269,weak,1,1
+user_001662,大样本周期_monthly_0270,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0270,weak,1,1
+user_001231,大样本周期_interval_0271,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0271,weak,0,0
+user_000390,大样本周期_daily_0272,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0272,strong,0,0
+user_000686,大样本周期_weekly_0273,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0273,strong,0,0
+user_000773,大样本周期_monthly_0274,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0274,strong,0,0
+user_001348,大样本周期_interval_0275,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0275,strong,0,0
+user_000326,大样本周期_daily_0276,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0276,weak,0,1
+user_001538,大样本周期_weekly_0277,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0277,weak,1,1
+user_000023,大样本周期_monthly_0278,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0278,weak,1,1
+user_001166,大样本周期_interval_0279,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0279,weak,0,0
+user_000824,大样本周期_daily_0280,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0280,strong,0,0
+user_001589,大样本周期_weekly_0281,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0281,strong,0,0
+user_001901,大样本周期_monthly_0282,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0282,strong,0,0
+user_000213,大样本周期_interval_0283,interval,every 13 days,2026-07-12 18:00:00,1,large_periodic_0283,strong,0,0
+user_001560,大样本周期_daily_0284,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0284,weak,0,1
+user_001954,大样本周期_weekly_0285,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0285,weak,1,1
+user_000986,大样本周期_monthly_0286,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0286,weak,1,1
+user_001351,大样本周期_interval_0287,interval,every 17 days,2026-07-15 18:00:00,1,large_periodic_0287,weak,0,0
+user_001315,大样本周期_daily_0288,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0288,strong,0,0
+user_000630,大样本周期_weekly_0289,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0289,strong,0,0
+user_001356,大样本周期_monthly_0290,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0290,strong,0,0
+user_000111,大样本周期_interval_0291,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0291,strong,0,0
+user_000982,大样本周期_daily_0292,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0292,weak,0,1
+user_001020,大样本周期_weekly_0293,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0293,weak,1,1
+user_000342,大样本周期_monthly_0294,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0294,weak,1,1
+user_001978,大样本周期_interval_0295,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0295,weak,0,0
+user_001125,大样本周期_daily_0296,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0296,strong,0,0
+user_001434,大样本周期_weekly_0297,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0297,strong,0,0
+user_000937,大样本周期_monthly_0298,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0298,strong,0,0
+user_000454,大样本周期_interval_0299,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0299,strong,0,0
+user_000589,大样本周期_daily_0300,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0300,weak,0,1
+user_001624,大样本周期_weekly_0301,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0301,weak,1,1
+user_000296,大样本周期_monthly_0302,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0302,weak,1,1
+user_001957,大样本周期_interval_0303,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0303,weak,0,0
+user_000425,大样本周期_daily_0304,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0304,strong,0,0
+user_000648,大样本周期_weekly_0305,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0305,strong,0,0
+user_001588,大样本周期_monthly_0306,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0306,strong,0,0
+user_001585,大样本周期_interval_0307,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0307,strong,0,0
+user_001546,大样本周期_daily_0308,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0308,weak,0,1
+user_000319,大样本周期_weekly_0309,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0309,weak,1,1
+user_001022,大样本周期_monthly_0310,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0310,weak,1,1
+user_000029,大样本周期_interval_0311,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0311,weak,0,0
+user_000502,大样本周期_daily_0312,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0312,strong,0,0
+user_001085,大样本周期_weekly_0313,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0313,strong,0,0
+user_001278,大样本周期_monthly_0314,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0314,strong,0,0
+user_000007,大样本周期_interval_0315,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0315,strong,0,0
+user_001109,大样本周期_daily_0316,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0316,weak,0,1
+user_000338,大样本周期_weekly_0317,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0317,weak,1,1
+user_001222,大样本周期_monthly_0318,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0318,weak,1,1
+user_000210,大样本周期_interval_0319,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0319,weak,0,0
+user_001995,大样本周期_daily_0320,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0320,strong,0,0
+user_001103,大样本周期_weekly_0321,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0321,strong,0,0
+user_000853,大样本周期_monthly_0322,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0322,strong,0,0
+user_000567,大样本周期_interval_0323,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0323,strong,0,0
+user_001558,大样本周期_daily_0324,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0324,weak,0,1
+user_000141,大样本周期_weekly_0325,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0325,weak,1,1
+user_000333,大样本周期_monthly_0326,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0326,weak,1,1
+user_001292,大样本周期_interval_0327,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0327,weak,0,0
+user_000258,大样本周期_daily_0328,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0328,strong,0,0
+user_000807,大样本周期_weekly_0329,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0329,strong,0,0
+user_000566,大样本周期_monthly_0330,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0330,strong,0,0
+user_001003,大样本周期_interval_0331,interval,every 13 days,2026-07-12 18:00:00,1,large_periodic_0331,strong,0,0
+user_001870,大样本周期_daily_0332,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0332,weak,0,1
+user_001145,大样本周期_weekly_0333,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0333,weak,1,1
+user_001073,大样本周期_monthly_0334,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0334,weak,1,1
+user_001471,大样本周期_interval_0335,interval,every 17 days,2026-07-15 18:00:00,1,large_periodic_0335,weak,0,0
+user_000192,大样本周期_daily_0336,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0336,strong,0,0
+user_001156,大样本周期_weekly_0337,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0337,strong,0,0
+user_001437,大样本周期_monthly_0338,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0338,strong,0,0
+user_001134,大样本周期_interval_0339,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0339,strong,0,0
+user_001675,大样本周期_daily_0340,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0340,weak,0,1
+user_000367,大样本周期_weekly_0341,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0341,weak,1,1
+user_000485,大样本周期_monthly_0342,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0342,weak,1,1
+user_000892,大样本周期_interval_0343,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0343,weak,0,0
+user_000497,大样本周期_daily_0344,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0344,strong,0,0
+user_001686,大样本周期_weekly_0345,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0345,strong,0,0
+user_000574,大样本周期_monthly_0346,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0346,strong,0,0
+user_001422,大样本周期_interval_0347,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0347,strong,0,0
+user_001774,大样本周期_daily_0348,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0348,weak,0,1
+user_001271,大样本周期_weekly_0349,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0349,weak,1,1
+user_001039,大样本周期_monthly_0350,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0350,weak,1,1
+user_001959,大样本周期_interval_0351,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0351,weak,0,0
+user_001303,大样本周期_daily_0352,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0352,strong,0,0
+user_000936,大样本周期_weekly_0353,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0353,strong,0,0
+user_001018,大样本周期_monthly_0354,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0354,strong,0,0
+user_001215,大样本周期_interval_0355,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0355,strong,0,0
+user_001678,大样本周期_daily_0356,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0356,weak,0,1
+user_001239,大样本周期_weekly_0357,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0357,weak,1,1
+user_000536,大样本周期_monthly_0358,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0358,weak,1,1
+user_000734,大样本周期_interval_0359,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0359,weak,0,0
+user_001789,大样本周期_daily_0360,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0360,strong,0,0
+user_000181,大样本周期_weekly_0361,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0361,strong,0,0
+user_000183,大样本周期_monthly_0362,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0362,strong,0,0
+user_000962,大样本周期_interval_0363,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0363,strong,0,0
+user_001747,大样本周期_daily_0364,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0364,weak,0,1
+user_000321,大样本周期_weekly_0365,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0365,weak,1,1
+user_000754,大样本周期_monthly_0366,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0366,weak,1,1
+user_001526,大样本周期_interval_0367,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0367,weak,0,0
+user_001220,大样本周期_daily_0368,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0368,strong,0,0
+user_001917,大样本周期_weekly_0369,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0369,strong,0,0
+user_001182,大样本周期_monthly_0370,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0370,strong,0,0
+user_001165,大样本周期_interval_0371,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0371,strong,0,0
+user_001810,大样本周期_daily_0372,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0372,weak,0,1
+user_000407,大样本周期_weekly_0373,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0373,weak,1,1
+user_000475,大样本周期_monthly_0374,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0374,weak,1,1
+user_000232,大样本周期_interval_0375,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0375,weak,0,0
+user_000427,大样本周期_daily_0376,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0376,strong,0,0
+user_000623,大样本周期_weekly_0377,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0377,strong,0,0
+user_001682,大样本周期_monthly_0378,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0378,strong,0,0
+user_000070,大样本周期_interval_0379,interval,every 13 days,2026-07-12 18:00:00,1,large_periodic_0379,strong,0,0
+user_001788,大样本周期_daily_0380,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0380,weak,0,1
+user_001751,大样本周期_weekly_0381,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0381,weak,1,1
+user_000834,大样本周期_monthly_0382,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0382,weak,1,1
+user_001081,大样本周期_interval_0383,interval,every 17 days,2026-07-15 18:00:00,1,large_periodic_0383,weak,0,0
+user_000583,大样本周期_daily_0384,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0384,strong,0,0
+user_001262,大样本周期_weekly_0385,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0385,strong,0,0
+user_001476,大样本周期_monthly_0386,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0386,strong,0,0
+user_000435,大样本周期_interval_0387,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0387,strong,0,0
+user_001275,大样本周期_daily_0388,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0388,weak,0,1
+user_000746,大样本周期_weekly_0389,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0389,weak,1,1
+user_000901,大样本周期_monthly_0390,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0390,weak,1,1
+user_000799,大样本周期_interval_0391,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0391,weak,0,0
+user_001630,大样本周期_daily_0392,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0392,strong,0,0
+user_000096,大样本周期_weekly_0393,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0393,strong,0,0
+user_001410,大样本周期_monthly_0394,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0394,strong,0,0
+user_000942,大样本周期_interval_0395,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0395,strong,0,0
+user_001052,大样本周期_daily_0396,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0396,weak,0,1
+user_000957,大样本周期_weekly_0397,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0397,weak,1,1
+user_001212,大样本周期_monthly_0398,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0398,weak,1,1
+user_001802,大样本周期_interval_0399,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0399,weak,0,0
+user_000946,大样本周期_daily_0400,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0400,strong,0,0
+user_000712,大样本周期_weekly_0401,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0401,strong,0,0
+user_001660,大样本周期_monthly_0402,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0402,strong,0,0
+user_000993,大样本周期_interval_0403,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0403,strong,0,0
+user_000960,大样本周期_daily_0404,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0404,weak,0,1
+user_000446,大样本周期_weekly_0405,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0405,weak,1,1
+user_000906,大样本周期_monthly_0406,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0406,weak,1,1
+user_000819,大样本周期_interval_0407,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0407,weak,0,0
+user_000465,大样本周期_daily_0408,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0408,strong,0,0
+user_001561,大样本周期_weekly_0409,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0409,strong,0,0
+user_001729,大样本周期_monthly_0410,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0410,strong,0,0
+user_000983,大样本周期_interval_0411,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0411,strong,0,0
+user_001654,大样本周期_daily_0412,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0412,weak,0,1
+user_001619,大样本周期_weekly_0413,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0413,weak,1,1
+user_001281,大样本周期_monthly_0414,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0414,weak,1,1
+user_000431,大样本周期_interval_0415,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0415,weak,0,0
+user_000217,大样本周期_daily_0416,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0416,strong,0,0
+user_001206,大样本周期_weekly_0417,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0417,strong,0,0
+user_001572,大样本周期_monthly_0418,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0418,strong,0,0
+user_001838,大样本周期_interval_0419,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0419,strong,0,0
+user_001478,大样本周期_daily_0420,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0420,weak,0,1
+user_000499,大样本周期_weekly_0421,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0421,weak,1,1
+user_000739,大样本周期_monthly_0422,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0422,weak,1,1
+user_000898,大样本周期_interval_0423,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0423,weak,0,0
+user_001584,大样本周期_daily_0424,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0424,strong,0,0
+user_001276,大样本周期_weekly_0425,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0425,strong,0,0
+user_001374,大样本周期_monthly_0426,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0426,strong,0,0
+user_001209,大样本周期_interval_0427,interval,every 13 days,2026-07-12 18:00:00,1,large_periodic_0427,strong,0,0
+user_001862,大样本周期_daily_0428,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0428,weak,0,1
+user_000868,大样本周期_weekly_0429,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0429,weak,1,1
+user_001234,大样本周期_monthly_0430,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0430,weak,1,1
+user_000654,大样本周期_interval_0431,interval,every 17 days,2026-07-15 18:00:00,1,large_periodic_0431,weak,0,0
+user_001653,大样本周期_daily_0432,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0432,strong,0,0
+user_001164,大样本周期_weekly_0433,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0433,strong,0,0
+user_001911,大样本周期_monthly_0434,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0434,strong,0,0
+user_001403,大样本周期_interval_0435,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0435,strong,0,0
+user_000884,大样本周期_daily_0436,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0436,weak,0,1
+user_001795,大样本周期_weekly_0437,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0437,weak,1,1
+user_001953,大样本周期_monthly_0438,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0438,weak,1,1
+user_001578,大样本周期_interval_0439,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0439,weak,0,0
+user_001703,大样本周期_daily_0440,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0440,strong,0,0
+user_000523,大样本周期_weekly_0441,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0441,strong,0,0
+user_001266,大样本周期_monthly_0442,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0442,strong,0,0
+user_001608,大样本周期_interval_0443,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0443,strong,0,0
+user_001179,大样本周期_daily_0444,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0444,weak,0,1
+user_000300,大样本周期_weekly_0445,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0445,weak,1,1
+user_000619,大样本周期_monthly_0446,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0446,weak,1,1
+user_001089,大样本周期_interval_0447,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0447,weak,0,0
+user_001594,大样本周期_daily_0448,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0448,strong,0,0
+user_000437,大样本周期_weekly_0449,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0449,strong,0,0
+user_001512,大样本周期_monthly_0450,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0450,strong,0,0
+user_001616,大样本周期_interval_0451,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0451,strong,0,0
+user_000377,大样本周期_daily_0452,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0452,weak,0,1
+user_000791,大样本周期_weekly_0453,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0453,weak,1,1
+user_001144,大样本周期_monthly_0454,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0454,weak,1,1
+user_000516,大样本周期_interval_0455,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0455,weak,0,0
+user_001612,大样本周期_daily_0456,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0456,strong,0,0
+user_000249,大样本周期_weekly_0457,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0457,strong,0,0
+user_001311,大样本周期_monthly_0458,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0458,strong,0,0
+user_001075,大样本周期_interval_0459,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0459,strong,0,0
+user_001016,大样本周期_daily_0460,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0460,weak,0,1
+user_000339,大样本周期_weekly_0461,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0461,weak,1,1
+user_000053,大样本周期_monthly_0462,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0462,weak,1,1
+user_001670,大样本周期_interval_0463,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0463,weak,0,0
+user_000409,大样本周期_daily_0464,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0464,strong,0,0
+user_000935,大样本周期_weekly_0465,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0465,strong,0,0
+user_000829,大样本周期_monthly_0466,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0466,strong,0,0
+user_001785,大样本周期_interval_0467,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0467,strong,0,0
+user_001549,大样本周期_daily_0468,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0468,weak,0,1
+user_000453,大样本周期_weekly_0469,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0469,weak,1,1
+user_000387,大样本周期_monthly_0470,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0470,weak,1,1
+user_000164,大样本周期_interval_0471,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0471,weak,0,0
+user_001648,大样本周期_daily_0472,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0472,strong,0,0
+user_000990,大样本周期_weekly_0473,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0473,strong,0,0
+user_001324,大样本周期_monthly_0474,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0474,strong,0,0
+user_001782,大样本周期_interval_0475,interval,every 13 days,2026-07-12 18:00:00,1,large_periodic_0475,strong,0,0
+user_000028,大样本周期_daily_0476,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0476,weak,0,1
+user_001607,大样本周期_weekly_0477,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0477,weak,1,1
+user_000134,大样本周期_monthly_0478,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0478,weak,1,1
+user_001752,大样本周期_interval_0479,interval,every 17 days,2026-07-15 18:00:00,1,large_periodic_0479,weak,0,0
+user_001388,大样本周期_daily_0480,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0480,strong,0,0
+user_000634,大样本周期_weekly_0481,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0481,strong,0,0
+user_001370,大样本周期_monthly_0482,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0482,strong,0,0
+user_000305,大样本周期_interval_0483,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0483,strong,0,0
+user_000130,大样本周期_daily_0484,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0484,weak,0,1
+user_001708,大样本周期_weekly_0485,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0485,weak,1,1
+user_000521,大样本周期_monthly_0486,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0486,weak,1,1
+user_000041,大样本周期_interval_0487,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0487,weak,0,0
+user_001499,大样本周期_daily_0488,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0488,strong,0,0
+user_001093,大样本周期_weekly_0489,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0489,strong,0,0
+user_001065,大样本周期_monthly_0490,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0490,strong,0,0
+user_000565,大样本周期_interval_0491,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0491,strong,0,0
+user_001523,大样本周期_daily_0492,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0492,weak,0,1
+user_001186,大样本周期_weekly_0493,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0493,weak,1,1
+user_001821,大样本周期_monthly_0494,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0494,weak,1,1
+user_000576,大样本周期_interval_0495,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0495,weak,0,0
+user_000146,大样本周期_daily_0496,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0496,strong,0,0
+user_000424,大样本周期_weekly_0497,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0497,strong,0,0
+user_001064,大样本周期_monthly_0498,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0498,strong,0,0
+user_001860,大样本周期_interval_0499,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0499,strong,0,0
+user_000345,大样本周期_daily_0500,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0500,weak,0,1
+user_000149,大样本周期_weekly_0501,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0501,weak,1,1
+user_000874,大样本周期_monthly_0502,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0502,weak,1,1
+user_001681,大样本周期_interval_0503,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0503,weak,0,0
+user_000757,大样本周期_daily_0504,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0504,strong,0,0
+user_001055,大样本周期_weekly_0505,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0505,strong,0,0
+user_000208,大样本周期_monthly_0506,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0506,strong,0,0
+user_000956,大样本周期_interval_0507,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0507,strong,0,0
+user_001731,大样本周期_daily_0508,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0508,weak,0,1
+user_001898,大样本周期_weekly_0509,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0509,weak,1,1
+user_000100,大样本周期_monthly_0510,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0510,weak,1,1
+user_000732,大样本周期_interval_0511,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0511,weak,0,0
+user_001640,大样本周期_daily_0512,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0512,strong,0,0
+user_000940,大样本周期_weekly_0513,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0513,strong,0,0
+user_001750,大样本周期_monthly_0514,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0514,strong,0,0
+user_000714,大样本周期_interval_0515,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0515,strong,0,0
+user_001890,大样本周期_daily_0516,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0516,weak,0,1
+user_000265,大样本周期_weekly_0517,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0517,weak,1,1
+user_000036,大样本周期_monthly_0518,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0518,weak,1,1
+user_000012,大样本周期_interval_0519,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0519,weak,0,0
+user_000535,大样本周期_daily_0520,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0520,strong,0,0
+user_001158,大样本周期_weekly_0521,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0521,strong,0,0
+user_001438,大样本周期_monthly_0522,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0522,strong,0,0
+user_001781,大样本周期_interval_0523,interval,every 13 days,2026-07-12 18:00:00,1,large_periodic_0523,strong,0,0
+user_001133,大样本周期_daily_0524,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0524,weak,0,1
+user_001790,大样本周期_weekly_0525,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0525,weak,1,1
+user_000488,大样本周期_monthly_0526,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0526,weak,1,1
+user_001872,大样本周期_interval_0527,interval,every 17 days,2026-07-15 18:00:00,1,large_periodic_0527,weak,0,0
+user_000055,大样本周期_daily_0528,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0528,strong,0,0
+user_001104,大样本周期_weekly_0529,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0529,strong,0,0
+user_001940,大样本周期_monthly_0530,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0530,strong,0,0
+user_001402,大样本周期_interval_0531,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0531,strong,0,0
+user_000414,大样本周期_daily_0532,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0532,weak,0,1
+user_001865,大样本周期_weekly_0533,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0533,weak,1,1
+user_001968,大样本周期_monthly_0534,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0534,weak,1,1
+user_001907,大样本周期_interval_0535,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0535,weak,0,0
+user_001162,大样本周期_daily_0536,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0536,strong,0,0
+user_000879,大样本周期_weekly_0537,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0537,strong,0,0
+user_000279,大样本周期_monthly_0538,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0538,strong,0,0
+user_000252,大样本周期_interval_0539,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0539,strong,0,0
+user_001285,大样本周期_daily_0540,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0540,weak,0,1
+user_000563,大样本周期_weekly_0541,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0541,weak,1,1
+user_001398,大样本周期_monthly_0542,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0542,weak,1,1
+user_001684,大样本周期_interval_0543,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0543,weak,0,0
+user_000628,大样本周期_daily_0544,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0544,strong,0,0
+user_000353,大样本周期_weekly_0545,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0545,strong,0,0
+user_000299,大样本周期_monthly_0546,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0546,strong,0,0
+user_000578,大样本周期_interval_0547,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0547,strong,0,0
+user_001809,大样本周期_daily_0548,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0548,weak,0,1
+user_001748,大样本周期_weekly_0549,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0549,weak,1,1
+user_001460,大样本周期_monthly_0550,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0550,weak,1,1
+user_000947,大样本周期_interval_0551,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0551,weak,0,0
+user_001450,大样本周期_daily_0552,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0552,strong,0,0
+user_000171,大样本周期_weekly_0553,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0553,strong,0,0
+user_001127,大样本周期_monthly_0554,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0554,strong,0,0
+user_001754,大样本周期_interval_0555,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0555,strong,0,0
+user_001295,大样本周期_daily_0556,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0556,weak,0,1
+user_000184,大样本周期_weekly_0557,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0557,weak,1,1
+user_000722,大样本周期_monthly_0558,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0558,weak,1,1
+user_001553,大样本周期_interval_0559,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0559,weak,0,0
+user_000289,大样本周期_daily_0560,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0560,strong,0,0
+user_000617,大样本周期_weekly_0561,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0561,strong,0,0
+user_000640,大样本周期_monthly_0562,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0562,strong,0,0
+user_001823,大样本周期_interval_0563,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0563,strong,0,0
+user_001503,大样本周期_daily_0564,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0564,weak,0,1
+user_001520,大样本周期_weekly_0565,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0565,weak,1,1
+user_000014,大样本周期_monthly_0566,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0566,weak,1,1
+user_000199,大样本周期_interval_0567,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0567,weak,0,0
+user_000836,大样本周期_daily_0568,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0568,strong,0,0
+user_000998,大样本周期_weekly_0569,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0569,strong,0,0
+user_000511,大样本周期_monthly_0570,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0570,strong,0,0
+user_000295,大样本周期_interval_0571,interval,every 13 days,2026-07-12 18:00:00,1,large_periodic_0571,strong,0,0
+user_000701,大样本周期_daily_0572,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0572,weak,0,1
+user_000245,大样本周期_weekly_0573,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0573,weak,1,1
+user_000382,大样本周期_monthly_0574,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0574,weak,1,1
+user_001433,大样本周期_interval_0575,interval,every 17 days,2026-07-15 18:00:00,1,large_periodic_0575,weak,0,0
+user_000510,大样本周期_daily_0576,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0576,strong,0,0
+user_001840,大样本周期_weekly_0577,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0577,strong,0,0
+user_000278,大样本周期_monthly_0578,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0578,strong,0,0
+user_000782,大样本周期_interval_0579,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0579,strong,0,0
+user_000554,大样本周期_daily_0580,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0580,weak,0,1
+user_001181,大样本周期_weekly_0581,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0581,weak,1,1
+user_001137,大样本周期_monthly_0582,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0582,weak,1,1
+user_000790,大样本周期_interval_0583,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0583,weak,0,0
+user_001050,大样本周期_daily_0584,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0584,strong,0,0
+user_000670,大样本周期_weekly_0585,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0585,strong,0,0
+user_000690,大样本周期_monthly_0586,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0586,strong,0,0
+user_001200,大样本周期_interval_0587,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0587,strong,0,0
+user_001567,大样本周期_daily_0588,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0588,weak,0,1
+user_000596,大样本周期_weekly_0589,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0589,weak,1,1
+user_000376,大样本周期_monthly_0590,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0590,weak,1,1
+user_000627,大样本周期_interval_0591,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0591,weak,0,0
+user_001007,大样本周期_daily_0592,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0592,strong,0,0
+user_000987,大样本周期_weekly_0593,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0593,strong,0,0
+user_001762,大样本周期_monthly_0594,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0594,strong,0,0
+user_000320,大样本周期_interval_0595,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0595,strong,0,0
+user_000439,大样本周期_daily_0596,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0596,weak,0,1
+user_001146,大样本周期_weekly_0597,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0597,weak,1,1
+user_001563,大样本周期_monthly_0598,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0598,weak,1,1
+user_000447,大样本周期_interval_0599,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0599,weak,0,0
+user_001934,大样本周期_daily_0600,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0600,strong,0,0
+user_000890,大样本周期_weekly_0601,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0601,strong,0,0
+user_001918,大样本周期_monthly_0602,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0602,strong,0,0
+user_000708,大样本周期_interval_0603,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0603,strong,0,0
+user_001816,大样本周期_daily_0604,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0604,weak,0,1
+user_001360,大样本周期_weekly_0605,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0605,weak,1,1
+user_001603,大样本周期_monthly_0606,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0606,weak,1,1
+user_000051,大样本周期_interval_0607,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0607,weak,0,0
+user_000594,大样本周期_daily_0608,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0608,strong,0,0
+user_000844,大样本周期_weekly_0609,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0609,strong,0,0
+user_000166,大样本周期_monthly_0610,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0610,strong,0,0
+user_001405,大样本周期_interval_0611,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0611,strong,0,0
+user_000226,大样本周期_daily_0612,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0612,weak,0,1
+user_001671,大样本周期_weekly_0613,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0613,weak,1,1
+user_001334,大样本周期_monthly_0614,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0614,weak,1,1
+user_000659,大样本周期_interval_0615,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0615,weak,0,0
+user_001864,大样本周期_daily_0616,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0616,strong,0,0
+user_001627,大样本周期_weekly_0617,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0617,strong,0,0
+user_001310,大样本周期_monthly_0618,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0618,strong,0,0
+user_001908,大样本周期_interval_0619,interval,every 13 days,2026-07-12 18:00:00,1,large_periodic_0619,strong,0,0
+user_000105,大样本周期_daily_0620,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0620,weak,0,1
+user_000182,大样本周期_weekly_0621,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0621,weak,1,1
+user_001973,大样本周期_monthly_0622,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0622,weak,1,1
+user_000609,大样本周期_interval_0623,interval,every 17 days,2026-07-15 18:00:00,1,large_periodic_0623,weak,0,0
+user_000911,大样本周期_daily_0624,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0624,strong,0,0
+user_000170,大样本周期_weekly_0625,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0625,strong,0,0
+user_001216,大样本周期_monthly_0626,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0626,strong,0,0
+user_001573,大样本周期_interval_0627,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0627,strong,0,0
+user_000610,大样本周期_daily_0628,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0628,weak,0,1
+user_001738,大样本周期_weekly_0629,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0629,weak,1,1
+user_001479,大样本周期_monthly_0630,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0630,weak,1,1
+user_001984,大样本周期_interval_0631,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0631,weak,0,0
+user_001659,大样本周期_daily_0632,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0632,strong,0,0
+user_001976,大样本周期_weekly_0633,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0633,strong,0,0
+user_000505,大样本周期_monthly_0634,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0634,strong,0,0
+user_001242,大样本周期_interval_0635,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0635,strong,0,0
+user_000311,大样本周期_daily_0636,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0636,weak,0,1
+user_000257,大样本周期_weekly_0637,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0637,weak,1,1
+user_000513,大样本周期_monthly_0638,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0638,weak,1,1
+user_001507,大样本周期_interval_0639,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0639,weak,0,0
+user_001240,大样本周期_daily_0640,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0640,strong,0,0
+user_000923,大样本周期_weekly_0641,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0641,strong,0,0
+user_001063,大样本周期_monthly_0642,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0642,strong,0,0
+user_000934,大样本周期_interval_0643,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0643,strong,0,0
+user_001155,大样本周期_daily_0644,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0644,weak,0,1
+user_000845,大样本周期_weekly_0645,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0645,weak,1,1
+user_001167,大样本周期_monthly_0646,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0646,weak,1,1
+user_001160,大样本周期_interval_0647,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0647,weak,0,0
+user_001384,大样本周期_daily_0648,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0648,strong,0,0
+user_001294,大样本周期_weekly_0649,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0649,strong,0,0
+user_000647,大样本周期_monthly_0650,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0650,strong,0,0
+user_001715,大样本周期_interval_0651,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0651,strong,0,0
+user_000118,大样本周期_daily_0652,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0652,weak,0,1
+user_001392,大样本周期_weekly_0653,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0653,weak,1,1
+user_000674,大样本周期_monthly_0654,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0654,weak,1,1
+user_000403,大样本周期_interval_0655,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0655,weak,0,0
+user_001511,大样本周期_daily_0656,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0656,strong,0,0
+user_001666,大样本周期_weekly_0657,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0657,strong,0,0
+user_000522,大样本周期_monthly_0658,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0658,strong,0,0
+user_001224,大样本周期_interval_0659,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0659,strong,0,0
+user_001358,大样本周期_daily_0660,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0660,weak,0,1
+user_000073,大样本周期_weekly_0661,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0661,weak,1,1
+user_001381,大样本周期_monthly_0662,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0662,weak,1,1
+user_001623,大样本周期_interval_0663,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0663,weak,0,0
+user_001742,大样本周期_daily_0664,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0664,strong,0,0
+user_001808,大样本周期_weekly_0665,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0665,strong,0,0
+user_001486,大样本周期_monthly_0666,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0666,strong,0,0
+user_000743,大样本周期_interval_0667,interval,every 13 days,2026-07-12 18:00:00,1,large_periodic_0667,strong,0,0
+user_001889,大样本周期_daily_0668,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0668,weak,0,1
+user_000801,大样本周期_weekly_0669,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0669,weak,1,1
+user_000540,大样本周期_monthly_0670,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0670,weak,1,1
+user_001464,大样本周期_interval_0671,interval,every 17 days,2026-07-15 18:00:00,1,large_periodic_0671,weak,0,0
+user_001201,大样本周期_daily_0672,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0672,strong,0,0
+user_001891,大样本周期_weekly_0673,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0673,strong,0,0
+user_000448,大样本周期_monthly_0674,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0674,strong,0,0
+user_001102,大样本周期_interval_0675,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0675,strong,0,0
+user_000551,大样本周期_daily_0676,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0676,weak,0,1
+user_000380,大样本周期_weekly_0677,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0677,weak,1,1
+user_000216,大样本周期_monthly_0678,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0678,weak,1,1
+user_000160,大样本周期_interval_0679,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0679,weak,0,0
+user_000958,大样本周期_daily_0680,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0680,strong,0,0
+user_000347,大样本周期_weekly_0681,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0681,strong,0,0
+user_000954,大样本周期_monthly_0682,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0682,strong,0,0
+user_000517,大样本周期_interval_0683,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0683,strong,0,0
+user_001644,大样本周期_daily_0684,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0684,weak,0,1
+user_001580,大样本周期_weekly_0685,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0685,weak,1,1
+user_000108,大样本周期_monthly_0686,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0686,weak,1,1
+user_001495,大样本周期_interval_0687,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0687,weak,0,0
+user_001113,大样本周期_daily_0688,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0688,strong,0,0
+user_000558,大样本周期_weekly_0689,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0689,strong,0,0
+user_001130,大样本周期_monthly_0690,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0690,strong,0,0
+user_001092,大样本周期_interval_0691,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0691,strong,0,0
+user_001972,大样本周期_daily_0692,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0692,weak,0,1
+user_001011,大样本周期_weekly_0693,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0693,weak,1,1
+user_000924,大样本周期_monthly_0694,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0694,weak,1,1
+user_000113,大样本周期_interval_0695,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0695,weak,0,0
+user_000075,大样本周期_daily_0696,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0696,strong,0,0
+user_000919,大样本周期_weekly_0697,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0697,strong,0,0
+user_001259,大样本周期_monthly_0698,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0698,strong,0,0
+user_001143,大样本周期_interval_0699,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0699,strong,0,0
+user_001451,大样本周期_daily_0700,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0700,weak,0,1
+user_000681,大样本周期_weekly_0701,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0701,weak,1,1
+user_001286,大样本周期_monthly_0702,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0702,weak,1,1
+user_001462,大样本周期_interval_0703,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0703,weak,0,0
+user_000854,大样本周期_daily_0704,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0704,strong,0,0
+user_001354,大样本周期_weekly_0705,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0705,strong,0,0
+user_000238,大样本周期_monthly_0706,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0706,strong,0,0
+user_001991,大样本周期_interval_0707,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0707,strong,0,0
+user_001933,大样本周期_daily_0708,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0708,weak,0,1
+user_001159,大样本周期_weekly_0709,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0709,weak,1,1
+user_001883,大样本周期_monthly_0710,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0710,weak,1,1
+user_001338,大样本周期_interval_0711,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0711,weak,0,0
+user_000235,大样本周期_daily_0712,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0712,strong,0,0
+user_000642,大样本周期_weekly_0713,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0713,strong,0,0
+user_000600,大样本周期_monthly_0714,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0714,strong,0,0
+user_001668,大样本周期_interval_0715,interval,every 13 days,2026-07-12 18:00:00,1,large_periodic_0715,strong,0,0
+user_000545,大样本周期_daily_0716,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0716,weak,0,1
+user_000800,大样本周期_weekly_0717,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0717,weak,1,1
+user_000989,大样本周期_monthly_0718,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0718,weak,1,1
+user_000281,大样本周期_interval_0719,interval,every 17 days,2026-07-15 18:00:00,1,large_periodic_0719,weak,0,0
+user_001010,大样本周期_daily_0720,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0720,strong,0,0
+user_000417,大样本周期_weekly_0721,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0721,strong,0,0
+user_000154,大样本周期_monthly_0722,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0722,strong,0,0
+user_000625,大样本周期_interval_0723,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0723,strong,0,0
+user_001615,大样本周期_daily_0724,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0724,weak,0,1
+user_000798,大样本周期_weekly_0725,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0725,weak,1,1
+user_000471,大样本周期_monthly_0726,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0726,weak,1,1
+user_001720,大样本周期_interval_0727,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0727,weak,0,0
+user_000885,大样本周期_daily_0728,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0728,strong,0,0
+user_000618,大样本周期_weekly_0729,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0729,strong,0,0
+user_001604,大样本周期_monthly_0730,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0730,strong,0,0
+user_001496,大样本周期_interval_0731,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0731,strong,0,0
+user_000860,大样本周期_daily_0732,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0732,weak,0,1
+user_001724,大样本周期_weekly_0733,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0733,weak,1,1
+user_000392,大样本周期_monthly_0734,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0734,weak,1,1
+user_001537,大样本周期_interval_0735,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0735,weak,0,0
+user_001257,大样本周期_daily_0736,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0736,strong,0,0
+user_001445,大样本周期_weekly_0737,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0737,strong,0,0
+user_000882,大样本周期_monthly_0738,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0738,strong,0,0
+user_000206,大样本周期_interval_0739,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0739,strong,0,0
+user_000812,大样本周期_daily_0740,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0740,weak,0,1
+user_000603,大样本周期_weekly_0741,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0741,weak,1,1
+user_000588,大样本周期_monthly_0742,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0742,weak,1,1
+user_000538,大样本周期_interval_0743,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0743,weak,0,0
+user_001880,大样本周期_daily_0744,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0744,strong,0,0
+user_000759,大样本周期_weekly_0745,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0745,strong,0,0
+user_001947,大样本周期_monthly_0746,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0746,strong,0,0
+user_000331,大样本周期_interval_0747,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0747,strong,0,0
+user_000969,大样本周期_daily_0748,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0748,weak,0,1
+user_001697,大样本周期_weekly_0749,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0749,weak,1,1
+user_000190,大样本周期_monthly_0750,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0750,weak,1,1
+user_000581,大样本周期_interval_0751,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0751,weak,0,0
+user_001341,大样本周期_daily_0752,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0752,strong,0,0
+user_000277,大样本周期_weekly_0753,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0753,strong,0,0
+user_000464,大样本周期_monthly_0754,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0754,strong,0,0
+user_001912,大样本周期_interval_0755,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0755,strong,0,0
+user_000575,大样本周期_daily_0756,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0756,weak,0,1
+user_001852,大样本周期_weekly_0757,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0757,weak,1,1
+user_000818,大样本周期_monthly_0758,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0758,weak,1,1
+user_000218,大样本周期_interval_0759,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0759,weak,0,0
+user_001120,大样本周期_daily_0760,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0760,strong,0,0
+user_000922,大样本周期_weekly_0761,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0761,strong,0,0
+user_001965,大样本周期_monthly_0762,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0762,strong,0,0
+user_001357,大样本周期_interval_0763,interval,every 13 days,2026-07-12 18:00:00,1,large_periodic_0763,strong,0,0
+user_001021,大样本周期_daily_0764,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0764,weak,0,1
+user_000107,大样本周期_weekly_0765,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0765,weak,1,1
+user_000643,大样本周期_monthly_0766,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0766,weak,1,1
+user_000354,大样本周期_interval_0767,interval,every 17 days,2026-07-15 18:00:00,1,large_periodic_0767,weak,0,0
+user_000666,大样本周期_daily_0768,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0768,strong,0,0
+user_000106,大样本周期_weekly_0769,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0769,strong,0,0
+user_000867,大样本周期_monthly_0770,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0770,strong,0,0
+user_000061,大样本周期_interval_0771,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0771,strong,0,0
+user_001436,大样本周期_daily_0772,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0772,weak,0,1
+user_001776,大样本周期_weekly_0773,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0773,weak,1,1
+user_000509,大样本周期_monthly_0774,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0774,weak,1,1
+user_000997,大样本周期_interval_0775,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0775,weak,0,0
+user_000001,大样本周期_daily_0776,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0776,strong,0,0
+user_000426,大样本周期_weekly_0777,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0777,strong,0,0
+user_000180,大样本周期_monthly_0778,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0778,strong,0,0
+user_001251,大样本周期_interval_0779,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0779,strong,0,0
+user_001261,大样本周期_daily_0780,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0780,weak,0,1
+user_001435,大样本周期_weekly_0781,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0781,weak,1,1
+user_000457,大样本周期_monthly_0782,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0782,weak,1,1
+user_000560,大样本周期_interval_0783,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0783,weak,0,0
+user_000770,大样本周期_daily_0784,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0784,strong,0,0
+user_001359,大样本周期_weekly_0785,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0785,strong,0,0
+user_001716,大样本周期_monthly_0786,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0786,strong,0,0
+user_000981,大样本周期_interval_0787,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0787,strong,0,0
+user_000432,大样本周期_daily_0788,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0788,weak,0,1
+user_000250,大样本周期_weekly_0789,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0789,weak,1,1
+user_001510,大样本周期_monthly_0790,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0790,weak,1,1
+user_000999,大样本周期_interval_0791,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0791,weak,0,0
+user_000626,大样本周期_daily_0792,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0792,strong,0,0
+user_001541,大样本周期_weekly_0793,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0793,strong,0,0
+user_000306,大样本周期_monthly_0794,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0794,strong,0,0
+user_000691,大样本周期_interval_0795,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0795,strong,0,0
+user_001227,大样本周期_daily_0796,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0796,weak,0,1
+user_000688,大样本周期_weekly_0797,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0797,weak,1,1
+user_001568,大样本周期_monthly_0798,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0798,weak,1,1
+user_000645,大样本周期_interval_0799,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0799,weak,0,0
+user_001749,大样本周期_daily_0800,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0800,strong,0,0
+user_000458,大样本周期_weekly_0801,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0801,strong,0,0
+user_001736,大样本周期_monthly_0802,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0802,strong,0,0
+user_001218,大样本周期_interval_0803,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0803,strong,0,0
+user_001196,大样本周期_daily_0804,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0804,weak,0,1
+user_001378,大样本周期_weekly_0805,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0805,weak,1,1
+user_001091,大样本周期_monthly_0806,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0806,weak,1,1
+user_001361,大样本周期_interval_0807,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0807,weak,0,0
+user_000602,大样本周期_daily_0808,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0808,strong,0,0
+user_000016,大样本周期_weekly_0809,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0809,strong,0,0
+user_001929,大样本周期_monthly_0810,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0810,strong,0,0
+user_000187,大样本周期_interval_0811,interval,every 13 days,2026-07-12 18:00:00,1,large_periodic_0811,strong,0,0
+user_000423,大样本周期_daily_0812,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0812,weak,0,1
+user_000749,大样本周期_weekly_0813,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0813,weak,1,1
+user_001024,大样本周期_monthly_0814,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0814,weak,1,1
+user_000733,大样本周期_interval_0815,interval,every 17 days,2026-07-15 18:00:00,1,large_periodic_0815,weak,0,0
+user_001846,大样本周期_daily_0816,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0816,strong,0,0
+user_000607,大样本周期_weekly_0817,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0817,strong,0,0
+user_001679,大样本周期_monthly_0818,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0818,strong,0,0
+user_001053,大样本周期_interval_0819,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0819,strong,0,0
+user_001282,大样本周期_daily_0820,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0820,weak,0,1
+user_000832,大样本周期_weekly_0821,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0821,weak,1,1
+user_001983,大样本周期_monthly_0822,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0822,weak,1,1
+user_000876,大样本周期_interval_0823,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0823,weak,0,0
+user_000178,大样本周期_daily_0824,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0824,strong,0,0
+user_000140,大样本周期_weekly_0825,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0825,strong,0,0
+user_000861,大样本周期_monthly_0826,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0826,strong,0,0
+user_001650,大样本周期_interval_0827,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0827,strong,0,0
+user_000340,大样本周期_daily_0828,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0828,weak,0,1
+user_001387,大样本周期_weekly_0829,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0829,weak,1,1
+user_000605,大样本周期_monthly_0830,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0830,weak,1,1
+user_000988,大样本周期_interval_0831,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0831,weak,0,0
+user_001885,大样本周期_daily_0832,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0832,strong,0,0
+user_000806,大样本周期_weekly_0833,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0833,strong,0,0
+user_001245,大样本周期_monthly_0834,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0834,strong,0,0
+user_001579,大样本周期_interval_0835,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0835,strong,0,0
+user_000855,大样本周期_daily_0836,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0836,weak,0,1
+user_000866,大样本周期_weekly_0837,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0837,weak,1,1
+user_001577,大样本周期_monthly_0838,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0838,weak,1,1
+user_001480,大样本周期_interval_0839,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0839,weak,0,0
+user_000114,大样本周期_daily_0840,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0840,strong,0,0
+user_001863,大样本周期_weekly_0841,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0841,strong,0,0
+user_000584,大样本周期_monthly_0842,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0842,strong,0,0
+user_001211,大样本周期_interval_0843,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0843,strong,0,0
+user_001574,大样本周期_daily_0844,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0844,weak,0,1
+user_001131,大样本周期_weekly_0845,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0845,weak,1,1
+user_001599,大样本周期_monthly_0846,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0846,weak,1,1
+user_001967,大样本周期_interval_0847,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0847,weak,0,0
+user_000117,大样本周期_daily_0848,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0848,strong,0,0
+user_000751,大样本周期_weekly_0849,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0849,strong,0,0
+user_000597,大样本周期_monthly_0850,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0850,strong,0,0
+user_001996,大样本周期_interval_0851,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0851,strong,0,0
+user_000820,大样本周期_daily_0852,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0852,weak,0,1
+user_000440,大样本周期_weekly_0853,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0853,weak,1,1
+user_000793,大样本周期_monthly_0854,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0854,weak,1,1
+user_001696,大样本周期_interval_0855,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0855,weak,0,0
+user_001937,大样本周期_daily_0856,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0856,strong,0,0
+user_000317,大样本周期_weekly_0857,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0857,strong,0,0
+user_001176,大样本周期_monthly_0858,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0858,strong,0,0
+user_001373,大样本周期_interval_0859,interval,every 13 days,2026-07-12 18:00:00,1,large_periodic_0859,strong,0,0
+user_001522,大样本周期_daily_0860,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0860,weak,0,1
+user_000846,大样本周期_weekly_0861,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0861,weak,1,1
+user_001456,大样本周期_monthly_0862,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0862,weak,1,1
+user_000267,大样本周期_interval_0863,interval,every 17 days,2026-07-15 18:00:00,1,large_periodic_0863,weak,0,0
+user_001493,大样本周期_daily_0864,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0864,strong,0,0
+user_001326,大样本周期_weekly_0865,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0865,strong,0,0
+user_001140,大样本周期_monthly_0866,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0866,strong,0,0
+user_000515,大样本周期_interval_0867,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0867,strong,0,0
+user_000835,大样本周期_daily_0868,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0868,weak,0,1
+user_001784,大样本周期_weekly_0869,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0869,weak,1,1
+user_001484,大样本周期_monthly_0870,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0870,weak,1,1
+user_001948,大样本周期_interval_0871,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0871,weak,0,0
+user_001981,大样本周期_daily_0872,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0872,strong,0,0
+user_000297,大样本周期_weekly_0873,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0873,strong,0,0
+user_001842,大样本周期_monthly_0874,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0874,strong,0,0
+user_000332,大样本周期_interval_0875,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0875,strong,0,0
+user_000856,大样本周期_daily_0876,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0876,weak,0,1
+user_000013,大样本周期_weekly_0877,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0877,weak,1,1
+user_001411,大样本周期_monthly_0878,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0878,weak,1,1
+user_000858,大样本周期_interval_0879,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0879,weak,0,0
+user_000142,大样本周期_daily_0880,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0880,strong,0,0
+user_000079,大样本周期_weekly_0881,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0881,strong,0,0
+user_000492,大样本周期_monthly_0882,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0882,strong,0,0
+user_000401,大样本周期_interval_0883,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0883,strong,0,0
+user_001455,大样本周期_daily_0884,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0884,weak,0,1
+user_000313,大样本周期_weekly_0885,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0885,weak,1,1
+user_001302,大样本周期_monthly_0886,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0886,weak,1,1
+user_000131,大样本周期_interval_0887,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0887,weak,0,0
+user_000570,大样本周期_daily_0888,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0888,strong,0,0
+user_000486,大样本周期_weekly_0889,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0889,strong,0,0
+user_000975,大样本周期_monthly_0890,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0890,strong,0,0
+user_000564,大样本周期_interval_0891,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0891,strong,0,0
+user_001559,大样本周期_daily_0892,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0892,weak,0,1
+user_001343,大样本周期_weekly_0893,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0893,weak,1,1
+user_000262,大样本周期_monthly_0894,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0894,weak,1,1
+user_000582,大样本周期_interval_0895,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0895,weak,0,0
+user_000809,大样本周期_daily_0896,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0896,strong,0,0
+user_001930,大样本周期_weekly_0897,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0897,strong,0,0
+user_001198,大样本周期_monthly_0898,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0898,strong,0,0
+user_001805,大样本周期_interval_0899,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0899,strong,0,0
+user_000585,大样本周期_daily_0900,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0900,weak,0,1
+user_000375,大样本周期_weekly_0901,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0901,weak,1,1
+user_001634,大样本周期_monthly_0902,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0902,weak,1,1
+user_001119,大样本周期_interval_0903,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0903,weak,0,0
+user_000022,大样本周期_daily_0904,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0904,strong,0,0
+user_001570,大样本周期_weekly_0905,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0905,strong,0,0
+user_001101,大样本周期_monthly_0906,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0906,strong,0,0
+user_001874,大样本周期_interval_0907,interval,every 13 days,2026-07-12 18:00:00,1,large_periodic_0907,strong,0,0
+user_001685,大样本周期_daily_0908,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0908,weak,0,1
+user_001524,大样本周期_weekly_0909,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0909,weak,1,1
+user_000767,大样本周期_monthly_0910,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0910,weak,1,1
+user_001173,大样本周期_interval_0911,interval,every 17 days,2026-07-15 18:00:00,1,large_periodic_0911,weak,0,0
+user_000158,大样本周期_daily_0912,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0912,strong,0,0
+user_000533,大样本周期_weekly_0913,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0913,strong,0,0
+user_000843,大样本周期_monthly_0914,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0914,strong,0,0
+user_001555,大样本周期_interval_0915,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0915,strong,0,0
+user_000951,大样本周期_daily_0916,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0916,weak,0,1
+user_000878,大样本周期_weekly_0917,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0917,weak,1,1
+user_001614,大样本周期_monthly_0918,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0918,weak,1,1
+user_001395,大样本周期_interval_0919,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0919,weak,0,0
+user_001467,大样本周期_daily_0920,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0920,strong,0,0
+user_000721,大样本周期_weekly_0921,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0921,strong,0,0
+user_001902,大样本周期_monthly_0922,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0922,strong,0,0
+user_000103,大样本周期_interval_0923,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0923,strong,0,0
+user_001289,大样本周期_daily_0924,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0924,weak,0,1
+user_000943,大样本周期_weekly_0925,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0925,weak,1,1
+user_000539,大样本周期_monthly_0926,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0926,weak,1,1
+user_000371,大样本周期_interval_0927,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0927,weak,0,0
+user_000294,大样本周期_daily_0928,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0928,strong,0,0
+user_000121,大样本周期_weekly_0929,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0929,strong,0,0
+user_000207,大样本周期_monthly_0930,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0930,strong,0,0
+user_000864,大样本周期_interval_0931,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0931,strong,0,0
+user_001236,大样本周期_daily_0932,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0932,weak,0,1
+user_000301,大样本周期_weekly_0933,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0933,weak,1,1
+user_000318,大样本周期_monthly_0934,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0934,weak,1,1
+user_001844,大样本周期_interval_0935,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0935,weak,0,0
+user_001647,大样本周期_daily_0936,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0936,strong,0,0
+user_000234,大样本周期_weekly_0937,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0937,strong,0,0
+user_001663,大样本周期_monthly_0938,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0938,strong,0,0
+user_000038,大样本周期_interval_0939,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0939,strong,0,0
+user_000814,大样本周期_daily_0940,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0940,weak,0,1
+user_001850,大样本周期_weekly_0941,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0941,weak,1,1
+user_000715,大样本周期_monthly_0942,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0942,weak,1,1
+user_001263,大样本周期_interval_0943,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0943,weak,0,0
+user_000058,大样本周期_daily_0944,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0944,strong,0,0
+user_001352,大样本周期_weekly_0945,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0945,strong,0,0
+user_001706,大样本周期_monthly_0946,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0946,strong,0,0
+user_001328,大样本周期_interval_0947,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0947,strong,0,0
+user_001431,大样本周期_daily_0948,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0948,weak,0,1
+user_000871,大样本周期_weekly_0949,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0949,weak,1,1
+user_000268,大样本周期_monthly_0950,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0950,weak,1,1
+user_001421,大样本周期_interval_0951,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0951,weak,0,0
+user_000637,大样本周期_daily_0952,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0952,strong,0,0
+user_000862,大样本周期_weekly_0953,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0953,strong,0,0
+user_001661,大样本周期_monthly_0954,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0954,strong,0,0
+user_000680,大样本周期_interval_0955,interval,every 13 days,2026-07-12 18:00:00,1,large_periodic_0955,strong,0,0
+user_000933,大样本周期_daily_0956,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0956,weak,0,1
+user_000529,大样本周期_weekly_0957,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0957,weak,1,1
+user_001767,大样本周期_monthly_0958,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0958,weak,1,1
+user_001820,大样本周期_interval_0959,interval,every 17 days,2026-07-15 18:00:00,1,large_periodic_0959,weak,0,0
+user_001385,大样本周期_daily_0960,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0960,strong,0,0
+user_001949,大样本周期_weekly_0961,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0961,strong,0,0
+user_000370,大样本周期_monthly_0962,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0962,strong,0,0
+user_001997,大样本周期_interval_0963,interval,every 9 days,2026-07-09 18:00:00,1,large_periodic_0963,strong,0,0
+user_000616,大样本周期_daily_0964,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0964,weak,0,1
+user_000928,大样本周期_weekly_0965,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0965,weak,1,1
+user_001128,大样本周期_monthly_0966,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0966,weak,1,1
+user_001169,大样本周期_interval_0967,interval,every 11 days,2026-07-10 18:00:00,1,large_periodic_0967,weak,0,0
+user_000115,大样本周期_daily_0968,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0968,strong,0,0
+user_000768,大样本周期_weekly_0969,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0969,strong,0,0
+user_000927,大样本周期_monthly_0970,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0970,strong,0,0
+user_000120,大样本周期_interval_0971,interval,every 13 days,2026-07-11 18:00:00,1,large_periodic_0971,strong,0,0
+user_001026,大样本周期_daily_0972,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0972,weak,0,1
+user_000847,大样本周期_weekly_0973,weekly,weekday 0,2026-07-06 06:00:00,1,large_periodic_0973,weak,1,1
+user_001905,大样本周期_monthly_0974,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0974,weak,1,1
+user_000966,大样本周期_interval_0975,interval,every 17 days,2026-07-17 18:00:00,1,large_periodic_0975,weak,0,0
+user_001399,大样本周期_daily_0976,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0976,strong,0,0
+user_001044,大样本周期_weekly_0977,weekly,weekday 4,2026-07-03 06:00:00,1,large_periodic_0977,strong,0,0
+user_001157,大样本周期_monthly_0978,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0978,strong,0,0
+user_000081,大样本周期_interval_0979,interval,every 9 days,2026-07-08 18:00:00,1,large_periodic_0979,strong,0,0
+user_001017,大样本周期_daily_0980,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0980,weak,0,1
+user_001230,大样本周期_weekly_0981,weekly,weekday 1,2026-07-07 06:00:00,1,large_periodic_0981,weak,1,1
+user_001208,大样本周期_monthly_0982,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0982,weak,1,1
+user_000102,大样本周期_interval_0983,interval,every 11 days,2026-07-09 18:00:00,1,large_periodic_0983,weak,0,0
+user_000413,大样本周期_daily_0984,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0984,strong,0,0
+user_001677,大样本周期_weekly_0985,weekly,weekday 5,2026-07-04 06:00:00,1,large_periodic_0985,strong,0,0
+user_001002,大样本周期_monthly_0986,monthly,day 28,2026-07-28 12:00:00,1,large_periodic_0986,strong,0,0
+user_001571,大样本周期_interval_0987,interval,every 13 days,2026-07-13 18:00:00,1,large_periodic_0987,strong,0,0
+user_001414,大样本周期_daily_0988,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0988,weak,0,1
+user_000156,大样本周期_weekly_0989,weekly,weekday 2,2026-07-01 06:00:00,1,large_periodic_0989,weak,1,1
+user_001177,大样本周期_monthly_0990,monthly,day 30,2026-07-30 12:00:00,1,large_periodic_0990,weak,1,1
+user_001013,大样本周期_interval_0991,interval,every 17 days,2026-07-16 18:00:00,1,large_periodic_0991,weak,0,0
+user_000667,大样本周期_daily_0992,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0992,strong,0,0
+user_000302,大样本周期_weekly_0993,weekly,weekday 6,2026-07-05 06:00:00,1,large_periodic_0993,strong,0,0
+user_001740,大样本周期_monthly_0994,monthly,day 1,2026-07-01 12:00:00,1,large_periodic_0994,strong,0,0
+user_000553,大样本周期_interval_0995,interval,every 9 days,2026-07-07 18:00:00,1,large_periodic_0995,strong,0,0
+user_001074,大样本周期_daily_0996,daily,every 1 day,2026-07-01 05:00:00,1,large_periodic_0996,weak,0,1
+user_000717,大样本周期_weekly_0997,weekly,weekday 3,2026-07-02 06:00:00,1,large_periodic_0997,weak,1,1
+user_000803,大样本周期_monthly_0998,monthly,day 15,2026-07-15 12:00:00,1,large_periodic_0998,weak,1,1
+user_001922,大样本周期_interval_0999,interval,every 11 days,2026-07-11 18:00:00,1,large_periodic_0999,weak,0,0

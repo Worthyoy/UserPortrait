@@ -1,10 +1,10 @@
 {
-  "profile_schema_version": 1,
+  "profile_schema_version": 2,
   "input_csv": "C:\\Users\\97233\\Desktop\\user_portrait\\sample_data\\sample_events.csv",
   "reference_time": "2026-03-31T12:00:00",
-  "started_at_utc": "2026-06-29T06:40:28.003288+00:00",
-  "finished_at_utc": "2026-06-29T06:40:37.673017+00:00",
-  "elapsed_seconds": 9.669239,
+  "started_at_utc": "2026-07-01T01:18:25.829149+00:00",
+  "finished_at_utc": "2026-07-01T01:18:33.682139+00:00",
+  "elapsed_seconds": 7.851909,
   "config": {
     "activity_window_days": 30,
     "high_active_days": 15,
@@ -22,6 +22,10 @@
     "weekly_min_occurrences": 4,
     "weekly_min_span_days": 21,
     "monthly_min_months": 3,
+    "daily_detection_window_days": 7,
+    "weekly_detection_window_days": 56,
+    "monthly_detection_window_days": 186,
+    "interval_detection_recent_occurrences": 6,
     "strong_period_cv": 0.2,
     "calendar_concentration": 0.75,
     "interval_max_min_ratio": 1.25,
@@ -40,21 +44,26 @@
     "high_freq_recent_count_7d": 4,
     "high_freq_lift": 3.0,
     "high_freq_recent_concentration": 0.6,
-    "frequent_task_top_k": 5
+    "frequent_task_top_k": 5,
+    "time_period_min_count": 4,
+    "time_period_min_active_days": 3,
+    "time_period_min_share": 0.7,
+    "time_period_top_k": 5
   },
   "input_quality": {
-    "input_row_count": 18155,
+    "input_row_count": 18940,
     "invalid_row_count": 0,
     "future_event_count": 0,
-    "valid_event_count": 18155,
+    "valid_event_count": 18940,
     "filtered_row_count": 0
   },
   "output_row_counts": {
     "activity_levels": 240,
     "recent_tasks": 720,
-    "periodic_tasks": 129,
-    "recent_high_freq_tasks": 111,
-    "frequent_tasks": 1187,
-    "personal_behavior_sequences": 160
+    "periodic_tasks": 140,
+    "recent_high_freq_tasks": 110,
+    "frequent_tasks": 1192,
+    "time_period_tasks": 478,
+    "personal_behavior_sequences": 161
   }
 }

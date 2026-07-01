@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import random
 from dataclasses import dataclass
 from datetime import date, datetime, time, timedelta
@@ -98,21 +99,63 @@ SEQUENCE_TEMPLATES = [
 
 @dataclass(frozen=True)
 class SampleDataConfig:
+    profile: str = "baseline"
     seed: int = 20260624
     high_users: int = 60
     middle_users: int = 80
     low_users: int = 70
     noise_users: int = 30
+    reference_time: datetime = NOW
+    history_days: int = 90
+    periodic_positive_count: int = 140
+    periodic_negative_count: int = 180
+    high_freq_positive_count: int = 100
+    high_freq_negative_count: int = 120
+    time_period_positive_count: int = 80
+    time_period_negative_count: int = 60
+    sequence_positive_count: int = 160
+    sequence_negative_count: int = 0
 
     @property
     def user_count(self) -> int:
         return self.high_users + self.middle_users + self.low_users + self.noise_users
+
+    @classmethod
+    def for_profile(cls, profile: str, *, seed: int | None = None) -> "SampleDataConfig":
+        if profile == "baseline":
+            return cls(seed=seed if seed is not None else 20260624)
+        if profile != "large":
+            raise ValueError(f"unknown sample profile: {profile}")
+        return cls(
+            profile="large",
+            seed=seed if seed is not None else 20260701,
+            high_users=500,
+            middle_users=650,
+            low_users=600,
+            noise_users=250,
+            reference_time=datetime(2026, 6, 30, 12, 0, 0),
+            history_days=365,
+            periodic_positive_count=1000,
+            periodic_negative_count=800,
+            high_freq_positive_count=800,
+            high_freq_negative_count=800,
+            time_period_positive_count=1000,
+            time_period_negative_count=800,
+            sequence_positive_count=1200,
+            sequence_negative_count=600,
+        )
 
 
 def generate_sample_dataset(
     config: SampleDataConfig | None = None,
 ) -> dict[str, pd.DataFrame]:
     cfg = config or SampleDataConfig()
+    if cfg.profile == "large":
+        from .large_sample_data import generate_large_sample_dataset
+
+        return generate_large_sample_dataset(cfg)
+    if cfg.profile != "baseline":
+        raise ValueError(f"unknown sample profile: {cfg.profile}")
     rng = random.Random(cfg.seed)
     users = _build_users(cfg)
     shuffled_users = users.copy()
@@ -253,14 +296,28 @@ def write_sample_dataset(
     *,
     encoding: str = "utf-8-sig",
 ) -> dict[str, Path]:
+    cfg = config or SampleDataConfig()
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
-    frames = generate_sample_dataset(config)
+    frames = generate_sample_dataset(cfg)
     written: dict[str, Path] = {}
     for name, frame in frames.items():
         path = output_path / f"{name}.csv"
         frame.to_csv(path, index=False, encoding=encoding)
         written[name] = path
+    if cfg.profile == "large":
+        from .large_sample_data import build_large_dataset_manifest
+
+        manifest_path = output_path / "sample_dataset_manifest.json"
+        with manifest_path.open("w", encoding="utf-8") as handle:
+            json.dump(
+                build_large_dataset_manifest(frames, cfg),
+                handle,
+                ensure_ascii=False,
+                indent=2,
+            )
+            handle.write("\n")
+        written["sample_dataset_manifest"] = manifest_path
     return written
 
 
@@ -964,13 +1021,14 @@ def main() -> None:
         default="sample_data",
         help="Directory for sample_events and ground-truth CSV files.",
     )
-    parser.add_argument("--seed", type=int, default=20260624)
+    parser.add_argument("--profile", choices=["baseline", "large"], default="baseline")
+    parser.add_argument("--seed", type=int, default=None)
     parser.add_argument("--encoding", default="utf-8-sig")
     args = parser.parse_args()
 
     paths = write_sample_dataset(
         args.output_dir,
-        SampleDataConfig(seed=args.seed),
+        SampleDataConfig.for_profile(args.profile, seed=args.seed),
         encoding=args.encoding,
     )
     for name, path in paths.items():

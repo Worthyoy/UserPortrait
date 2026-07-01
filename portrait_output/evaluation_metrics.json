@@ -1,0 +1,237 @@
+{
+  "evaluation_schema_version": 1,
+  "generated_at_utc": "2026-07-01T01:35:19.832059+00:00",
+  "ground_truth_dir": "C:\\Users\\97233\\Desktop\\user_portrait\\sample_data",
+  "profiles_dir": "C:\\Users\\97233\\Desktop\\user_portrait\\portrait_output",
+  "synthetic_regression_only": true,
+  "modules": {
+    "activity_levels": {
+      "sample_counts": {
+        "expected_users": 240,
+        "predicted_users": 240
+      },
+      "metrics": {
+        "classification_accuracy": {
+          "value": 1.0,
+          "threshold": null,
+          "comparison": null,
+          "gated": false,
+          "status": "reported"
+        }
+      }
+    },
+    "recent_tasks": {
+      "sample_counts": {
+        "predicted": 720,
+        "positive_ground_truth": 720,
+        "matched_positive": 720
+      },
+      "metrics": {
+        "precision": {
+          "value": 1.0,
+          "threshold": null,
+          "comparison": null,
+          "gated": false,
+          "status": "reported"
+        },
+        "recall": {
+          "value": 1.0,
+          "threshold": null,
+          "comparison": null,
+          "gated": false,
+          "status": "reported"
+        },
+        "rank_accuracy": {
+          "value": 1.0,
+          "threshold": null,
+          "comparison": null,
+          "gated": false,
+          "status": "reported"
+        }
+      }
+    },
+    "frequent_tasks": {
+      "sample_counts": {
+        "predicted": 1192,
+        "positive_ground_truth": 1192,
+        "matched_positive": 1192
+      },
+      "metrics": {
+        "precision": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "recall": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "event_count_accuracy": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "active_days_accuracy": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "rank_accuracy": {
+          "value": 1.0,
+          "threshold": 1.0,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        }
+      }
+    },
+    "periodic_tasks": {
+      "sample_counts": {
+        "predicted": 140,
+        "positive_ground_truth": 140,
+        "matched_positive": 116,
+        "negative_ground_truth": 180,
+        "matched_negative": 2
+      },
+      "metrics": {
+        "precision": {
+          "value": 0.8285714285714286,
+          "threshold": 0.75,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "recall": {
+          "value": 0.8285714285714286,
+          "threshold": 0.8,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "negative_false_positive_rate": {
+          "value": 0.011111111111111112,
+          "threshold": 0.02,
+          "comparison": "<=",
+          "gated": true,
+          "status": "pass"
+        },
+        "next_expected_time_accuracy": {
+          "value": 1.0,
+          "threshold": null,
+          "comparison": null,
+          "gated": false,
+          "status": "reported"
+        }
+      }
+    },
+    "recent_high_freq_tasks": {
+      "sample_counts": {
+        "predicted": 110,
+        "positive_ground_truth": 100,
+        "matched_positive": 100,
+        "negative_ground_truth": 120,
+        "matched_negative": 0
+      },
+      "metrics": {
+        "precision": {
+          "value": 0.9090909090909091,
+          "threshold": 0.8,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "recall": {
+          "value": 1.0,
+          "threshold": 0.85,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "negative_false_positive_rate": {
+          "value": 0.0,
+          "threshold": 0.15,
+          "comparison": "<=",
+          "gated": true,
+          "status": "pass"
+        }
+      }
+    },
+    "time_period_tasks": {
+      "sample_counts": {
+        "predicted": 478,
+        "positive_ground_truth": 80,
+        "matched_positive": 76,
+        "negative_ground_truth": 60,
+        "matched_negative": 0
+      },
+      "metrics": {
+        "precision": {
+          "value": null,
+          "threshold": null,
+          "comparison": null,
+          "gated": false,
+          "status": "not_applicable",
+          "note": "Positive ground truth is not exhaustive, so precision is not meaningful."
+        },
+        "recall": {
+          "value": 0.95,
+          "threshold": 0.85,
+          "comparison": ">=",
+          "gated": true,
+          "status": "pass"
+        },
+        "negative_false_positive_rate": {
+          "value": 0.0,
+          "threshold": 0.15,
+          "comparison": "<=",
+          "gated": true,
+          "status": "pass"
+        }
+      }
+    },
+    "personal_behavior_sequences": {
+      "sample_counts": {
+        "predicted": 161,
+        "positive_ground_truth": 160,
+        "matched_positive": 147
+      },
+      "metrics": {
+        "precision": {
+          "value": 0.9130434782608695,
+          "threshold": null,
+          "comparison": null,
+          "gated": false,
+          "status": "reported"
+        },
+        "recall": {
+          "value": 0.91875,
+          "threshold": null,
+          "comparison": null,
+          "gated": false,
+          "status": "reported"
+        }
+      },
+      "sequence_length_distribution": {
+        "2": 20,
+        "3": 93,
+        "4": 32,
+        "5": 16
+      }
+    }
+  },
+  "summary": {
+    "module_count": 7,
+    "gated_metric_count": 13,
+    "failed_metric_count": 0
+  },
+  "overall_pass": true
+}

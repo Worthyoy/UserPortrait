@@ -100,6 +100,24 @@ Build portraits from the generated sample data:
 python -m user_portrait.cli sample_data\sample_events.csv portrait_output --now "2026-03-31 12:00:00"
 ```
 
+Evaluate the generated CSV snapshot against the synthetic ground truth:
+
+```powershell
+python evaluate_profiles.py sample_data portrait_output
+```
+
+The evaluator prints a metric table and writes
+`portrait_output\evaluation_metrics.json`. Enable the optional CI quality gate with:
+
+```powershell
+python evaluate_profiles.py sample_data portrait_output --fail-on-threshold
+```
+
+The gate returns exit code `1` when a metric with an established regression threshold
+fails. Invalid or missing inputs return exit code `2`. Use `--output-json` to override
+the report path. Fixed time-period precision is intentionally reported as `null`
+because its positive labels are not an exhaustive list of all valid candidates.
+
 Run the regression tests:
 
 ```powershell
@@ -108,3 +126,21 @@ python -m pytest -q
 
 Synthetic precision and recall are regression indicators for the generated patterns;
 they are not estimates of production accuracy.
+
+## Large Comprehensive Validation
+
+Keep the baseline dataset for fast regression and generate the separate 2,000-user,
+one-year validation dataset with:
+
+```powershell
+python generate_sample_events.py sample_data_large --profile large --seed 20260701
+python -m user_portrait.cli sample_data_large\sample_events.csv portrait_output_large --now "2026-06-30 12:00:00"
+python -m user_portrait.cli sample_data_large\sample_events_dirty.csv portrait_output_large_dirty --now "2026-06-30 12:00:00"
+python evaluate_profiles.py sample_data_large portrait_output_large --dirty-profiles-dir portrait_output_large_dirty --fail-on-threshold
+```
+
+The large profile writes `sample_dataset_manifest.json`, an exhaustive
+`sample_ground_truth_time_period.csv`, and the separately named injected-pattern file
+`sample_injected_time_period_patterns.csv`. It covers 175,902 clean events plus 100
+future or invalid rows in the dirty input. The exhaustive time-period labels allow
+Precision, Recall, all statistic fields, and rank to be evaluated directly.

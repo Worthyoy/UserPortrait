@@ -1,0 +1,52 @@
+{
+  "dataset_schema_version": 2,
+  "profile": "large",
+  "seed": 20260701,
+  "reference_time": "2026-06-30 12:00:00",
+  "history_days": 365,
+  "user_count": 2000,
+  "clean_event_count": 175902,
+  "dirty_event_count": 176002,
+  "time_period_ground_truth_scope": "exhaustive",
+  "cohort_counts": {
+    "high": 500,
+    "middle": 650,
+    "low": 600,
+    "noise": 250
+  },
+  "pattern_counts": {
+    "periodic_positive": 1000,
+    "periodic_negative": 800,
+    "high_freq_positive": 800,
+    "high_freq_negative": 800,
+    "time_period_injected": 1000,
+    "time_period_exhaustive": 4963,
+    "time_period_negative": 800,
+    "sequence_positive": 1200,
+    "sequence_negative": 600
+  },
+  "overlap_users": {
+    "at_least_two_modules": 1200,
+    "at_least_three_modules": 800
+  },
+  "dirty_input_expected": {
+    "future_event_count": 50,
+    "invalid_row_count": 50,
+    "filtered_row_count": 100
+  },
+  "file_row_counts": {
+    "sample_events": 175902,
+    "sample_events_dirty": 176002,
+    "sample_ground_truth_recent": 6000,
+    "sample_ground_truth_frequent": 10000,
+    "sample_ground_truth_periodic": 1000,
+    "sample_ground_truth_periodic_negative": 800,
+    "sample_ground_truth_high_freq": 800,
+    "sample_ground_truth_high_freq_negative": 800,
+    "sample_ground_truth_time_period": 4963,
+    "sample_injected_time_period_patterns": 1000,
+    "sample_ground_truth_time_period_negative": 800,
+    "sample_ground_truth_sequences": 1200,
+    "sample_ground_truth_sequences_negative": 600
+  }
+}
