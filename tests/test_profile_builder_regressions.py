@@ -149,6 +149,119 @@ def test_monthly_period_ignores_events_outside_detection_window() -> None:
     assert monthly["next_expected_time"] == pd.Timestamp("2026-04-25 09:00:00")
 
 
+def test_weekly_period_counts_each_active_date_once() -> None:
+    now = datetime(2026, 3, 24, 12)
+    base_rows = [
+        _row("u1", "weekly_action", datetime(2026, 3, day, 9))
+        for day in [2, 9, 16, 23]
+    ]
+    base_rows.append(_row("u1", "weekly_action", datetime(2026, 3, 24, 10)))
+    repeated_rows = base_rows + [
+        *[
+            _row("u1", "weekly_action", datetime(2026, 3, 24, 10))
+            for _ in range(3)
+        ],
+        *[
+            _row("u1", "weekly_action", datetime(2026, 3, 24, 18))
+            for _ in range(6)
+        ],
+    ]
+
+    base = build_user_profiles(pd.DataFrame(base_rows), now=now)["periodic_tasks"].iloc[0]
+    repeated = build_user_profiles(pd.DataFrame(repeated_rows), now=now)[
+        "periodic_tasks"
+    ].iloc[0]
+
+    assert repeated.to_dict() == base.to_dict()
+    assert repeated["period_type"] == "weekly"
+    assert repeated["period_value"] == "weekday=0"
+    assert "80% 的活跃日" in repeated["evidence"]
+
+
+def test_monthly_period_counts_each_active_date_once() -> None:
+    now = datetime(2026, 4, 30, 12)
+    base_rows = [
+        _row("u1", "monthly_action", datetime(2026, month, 25, 9))
+        for month in [1, 2, 3, 4]
+    ]
+    base_rows.append(_row("u1", "monthly_action", datetime(2026, 4, 10, 10)))
+    repeated_rows = base_rows + [
+        *[
+            _row("u1", "monthly_action", datetime(2026, 4, 10, 10))
+            for _ in range(3)
+        ],
+        *[
+            _row("u1", "monthly_action", datetime(2026, 4, 10, 18))
+            for _ in range(6)
+        ],
+    ]
+
+    base = build_user_profiles(pd.DataFrame(base_rows), now=now)["periodic_tasks"].iloc[0]
+    repeated = build_user_profiles(pd.DataFrame(repeated_rows), now=now)[
+        "periodic_tasks"
+    ].iloc[0]
+
+    assert repeated.to_dict() == base.to_dict()
+    assert repeated["period_type"] == "monthly"
+    assert repeated["period_value"] == "day≈25"
+    assert "80% 的活跃日" in repeated["evidence"]
+
+
+def test_period_time_uses_each_active_dates_first_visit() -> None:
+    now = datetime(2026, 3, 27, 12)
+    base_rows = [
+        _row("u1", "daily_action", datetime(2026, 3, day, 9))
+        for day in [25, 26, 27]
+    ]
+    later_repeats = base_rows + [
+        _row("u1", "daily_action", datetime(2026, 3, day, 18))
+        for day in [25, 26, 27]
+        for _ in range(5)
+    ]
+    earlier_visits = base_rows + [
+        _row("u1", "daily_action", datetime(2026, 3, day, 5))
+        for day in [25, 26, 27]
+    ]
+
+    base = build_user_profiles(pd.DataFrame(base_rows), now=now)["periodic_tasks"].iloc[0]
+    repeated = build_user_profiles(pd.DataFrame(later_repeats), now=now)[
+        "periodic_tasks"
+    ].iloc[0]
+    earlier = build_user_profiles(pd.DataFrame(earlier_visits), now=now)[
+        "periodic_tasks"
+    ].iloc[0]
+
+    assert repeated.to_dict() == base.to_dict()
+    assert earlier["period_type"] == base["period_type"] == "daily"
+    assert earlier["confidence"] == base["confidence"]
+    assert earlier["evidence"] == base["evidence"]
+    assert base["next_expected_time"] == pd.Timestamp("2026-03-28 09:00:00")
+    assert earlier["next_expected_time"] == pd.Timestamp("2026-03-28 05:00:00")
+    assert base["preferred_time_window"] == "morning"
+    assert earlier["preferred_time_window"] == "night"
+
+
+def test_interval_period_time_ignores_later_same_day_visits() -> None:
+    base_rows = [
+        _row("u1", "interval_action", datetime(2026, 3, day, 9))
+        for day in [1, 7, 13, 19, 25, 31]
+    ]
+    repeated_rows = base_rows + [
+        _row("u1", "interval_action", datetime(2026, 3, day, 18))
+        for day in [1, 7, 13, 19, 25, 31]
+        for _ in range(5)
+    ]
+
+    base = build_user_profiles(pd.DataFrame(base_rows), now=NOW)["periodic_tasks"].iloc[0]
+    repeated = build_user_profiles(pd.DataFrame(repeated_rows), now=NOW)[
+        "periodic_tasks"
+    ].iloc[0]
+
+    assert repeated.to_dict() == base.to_dict()
+    assert repeated["period_type"] == "interval"
+    assert repeated["next_expected_time"] == pd.Timestamp("2026-04-06 09:00:00")
+
+
 def test_interval_period_uses_recent_occurrence_window() -> None:
     rows = [
         _row("u1", "interval_action", datetime(2025, 10, 1, 9, 0, 0)),
@@ -185,6 +298,75 @@ def test_monthly_period_takes_precedence_over_long_interval() -> None:
 
     assert monthly["period_type"] == "monthly"
     assert monthly["period_value"] == "day≈25"
+
+
+def test_stale_monthly_candidate_falls_back_to_active_interval() -> None:
+    now = datetime(2026, 6, 30, 12)
+    rows = [
+        _row("u1", "changing_pattern", datetime(2026, month, 15, 9))
+        for month in [1, 2, 3, 4, 5]
+    ]
+    rows.extend(
+        _row("u1", "changing_pattern", datetime(2026, 6, day, 9))
+        for day in [20, 22, 24, 26, 28, 30]
+    )
+
+    profiles = build_user_profiles(
+        pd.DataFrame(rows),
+        now=now,
+        config=ProfileConfig(calendar_concentration=0.4),
+    )
+    period = profiles["periodic_tasks"].query(
+        "user_id == 'u1' and action_name == 'changing_pattern'"
+    ).iloc[0]
+
+    assert period["period_type"] == "interval"
+    assert period["period_value"] == "every 2 days"
+    assert period["next_expected_time"] == pd.Timestamp("2026-07-02 09:00:00")
+
+
+def test_active_monthly_candidate_still_takes_precedence_over_interval() -> None:
+    now = datetime(2026, 6, 30, 12)
+    rows = [
+        _row("u1", "mixed_pattern", datetime(2026, month, 15, 9))
+        for month in [1, 2, 3, 4, 5, 6]
+    ]
+
+    profiles = build_user_profiles(pd.DataFrame(rows), now=now)
+    period = profiles["periodic_tasks"].query(
+        "user_id == 'u1' and action_name == 'mixed_pattern'"
+    ).iloc[0]
+
+    assert period["period_type"] == "monthly"
+    assert period["next_expected_time"] == pd.Timestamp("2026-07-15 09:00:00")
+
+
+def test_stale_monthly_candidate_is_not_rolled_forward() -> None:
+    now = datetime(2026, 6, 30, 12)
+    rows = [
+        _row("u1", "stale_monthly", datetime(2026, month, 15, 9))
+        for month in [2, 3, 4]
+    ]
+
+    profiles = build_user_profiles(pd.DataFrame(rows), now=now)
+
+    assert "stale_monthly" not in profiles["periodic_tasks"]["action_name"].tolist()
+
+
+def test_candidate_on_current_date_remains_active_before_preferred_hour() -> None:
+    now = datetime(2026, 3, 31, 8)
+    rows = [
+        _row("u1", "weekly_morning", datetime(2026, 3, day, 9))
+        for day in [3, 10, 17, 24]
+    ]
+
+    profiles = build_user_profiles(pd.DataFrame(rows), now=now)
+    period = profiles["periodic_tasks"].query(
+        "user_id == 'u1' and action_name == 'weekly_morning'"
+    ).iloc[0]
+
+    assert period["period_type"] == "weekly"
+    assert period["next_expected_time"] == pd.Timestamp("2026-03-31 09:00:00")
 
 
 def test_weekly_period_tolerates_non_anchor_weekday_noise() -> None:

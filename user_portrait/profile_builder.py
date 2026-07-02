@@ -469,8 +469,8 @@ def _detect_period(
         return None
 
     candidates: list[dict[str, Any]] = []
-    daily_timestamps = _timestamps_in_recent_days(
-        timestamps, now, cfg.daily_detection_window_days
+    daily_timestamps = _first_timestamp_per_active_date(
+        _timestamps_in_recent_days(timestamps, now, cfg.daily_detection_window_days)
     )
     daily_dates = _unique_dates(daily_timestamps)
     daily_stats = _date_interval_stats(daily_dates)
@@ -495,8 +495,8 @@ def _detect_period(
         candidate["_timestamps"] = daily_timestamps
         candidates.append(candidate)
 
-    weekly_timestamps = _timestamps_in_recent_days(
-        timestamps, now, cfg.weekly_detection_window_days
+    weekly_timestamps = _first_timestamp_per_active_date(
+        _timestamps_in_recent_days(timestamps, now, cfg.weekly_detection_window_days)
     )
     weekly_dates = _unique_dates(weekly_timestamps)
     weekly_stats = _date_interval_stats(weekly_dates)
@@ -532,15 +532,15 @@ def _detect_period(
                 concentration,
                 (
                     f"最近 {cfg.weekly_detection_window_days} 天内 "
-                    f"{concentration:.0%} 的行为发生在星期 {weekday + 1}"
+                    f"{concentration:.0%} 的活跃日发生在星期 {weekday + 1}"
                 ),
                 cfg,
             )
             candidate["_timestamps"] = weekly_anchor_timestamps
             candidates.append(candidate)
 
-    monthly_timestamps = _timestamps_in_recent_days(
-        timestamps, now, cfg.monthly_detection_window_days
+    monthly_timestamps = _first_timestamp_per_active_date(
+        _timestamps_in_recent_days(timestamps, now, cfg.monthly_detection_window_days)
     )
     monthly_dates = _unique_dates(monthly_timestamps)
     monthly_stats = _date_interval_stats(monthly_dates)
@@ -574,7 +574,8 @@ def _detect_period(
             month_concentration,
             (
                 f"最近 {cfg.monthly_detection_window_days} 天内 "
-                f"{month_concentration:.0%} 的行为集中在每月 {month_anchor} 日前后"
+                f"{month_concentration:.0%} 的活跃日集中在每月 "
+                f"{month_anchor} 日前后"
             ),
             cfg,
         )
@@ -586,7 +587,9 @@ def _detect_period(
         if cfg.interval_detection_recent_occurrences > 0
         else []
     )
-    interval_timestamps = _timestamps_for_dates(timestamps, interval_dates)
+    interval_timestamps = _first_timestamp_per_active_date(
+        _timestamps_for_dates(timestamps, interval_dates)
+    )
     interval_stats = _date_interval_stats(interval_dates)
     if interval_stats is not None:
         min_interval = min(interval_stats["intervals"])
@@ -626,12 +629,25 @@ def _detect_period(
     if not viable_candidates:
         return None
 
+    active_candidates: list[dict[str, Any]] = []
+    for item in viable_candidates:
+        finalized = dict(item)
+        time_series = pd.Series(finalized.pop("_timestamps"))
+        finalized["preferred_time_window"] = _preferred_time_window(time_series)
+        finalized["next_expected_time"] = _apply_preferred_hour(
+            finalized["next_expected_time"], time_series
+        )
+        if finalized["next_expected_time"] > now:
+            active_candidates.append(finalized)
+    if not active_candidates:
+        return None
+
     monthly_candidates = [
-        item for item in viable_candidates if item["period_type"] == "monthly"
+        item for item in active_candidates if item["period_type"] == "monthly"
     ]
     interval_candidates = [
         item
-        for item in viable_candidates
+        for item in active_candidates
         if item["period_type"] == "interval"
         and _interval_days_from_candidate(item) > cfg.long_interval_priority_days
     ]
@@ -640,17 +656,8 @@ def _detect_period(
         if monthly_candidates
         else max(interval_candidates, key=lambda item: item["confidence"])
         if interval_candidates
-        else max(viable_candidates, key=lambda item: item["confidence"])
+        else max(active_candidates, key=lambda item: item["confidence"])
     )
-    selected = dict(selected)
-    time_series = pd.Series(selected.pop("_timestamps"))
-    preferred_time_window = _preferred_time_window(time_series)
-    selected["preferred_time_window"] = preferred_time_window
-    selected["next_expected_time"] = _apply_preferred_hour(
-        selected["next_expected_time"], time_series
-    )
-    if selected["next_expected_time"] <= now:
-        return None
     return selected
 
 
@@ -665,6 +672,15 @@ def _timestamps_in_recent_days(
 
 def _unique_dates(timestamps: list[pd.Timestamp]) -> list[pd.Timestamp]:
     return sorted({value.normalize() for value in timestamps})
+
+
+def _first_timestamp_per_active_date(
+    timestamps: list[pd.Timestamp],
+) -> list[pd.Timestamp]:
+    first_by_date: dict[pd.Timestamp, pd.Timestamp] = {}
+    for value in sorted(pd.Timestamp(timestamp) for timestamp in timestamps):
+        first_by_date.setdefault(value.normalize(), value)
+    return list(first_by_date.values())
 
 
 def _best_period_dates_for_cv(

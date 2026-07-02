@@ -24,6 +24,8 @@ Key rules:
   converted to that business timezone before all date and time-period calculations.
 - Users with no events in the latest 30 days are always classified as low activity.
 - Monthly anchors use the date nearest the observed median when concentration ties.
+- Period detection counts each active business date once per action and uses that
+  date's first visit when deriving the preferred time and next expected hour.
 - Sequence confidence is `full sequence count / all prefix count`, including prefixes
   that end a session and single-event sessions containing only the prefix action.
 - Multiple actions for the same user at the same timestamp remain available to all
